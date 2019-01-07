@@ -207,11 +207,11 @@
         }
     }
     setInterval(function(){
-        data1 = xPos.toFixed(2);
-        data2 = yPos.toFixed(2);
+        data1 = onOrientationChange.xPos.toFixed(2);
+        data2 = onOrientationChange.yPos.toFixed(2);
 
-        document.getElementById("data1").innerHTML = data1;
-        document.getElementById("data2").innerHTML = data2;
+        document.getElementById("data1").innerHTML = data1 +"도";
+        document.getElementById("data2").innerHTML = data2 +"도";
     },200)
     window.onload = init;
 }());
