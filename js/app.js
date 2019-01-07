@@ -206,6 +206,12 @@
             setError("DeviceMotion Events API is not supported.");
         }
     }
- 
+    setInterval(function(){
+        data1 = xPos.toFixed(2);
+        data2 = yPos.toFixed(2);
+
+        document.getElementById("data1").innerHTML = data1;
+        document.getElementById("data2").innerHTML = data2;
+    },200)
     window.onload = init;
 }());
