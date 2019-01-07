@@ -88,7 +88,7 @@ body {
     color: rgba(255, 255, 255, 1);
     font-size: 20px;
 }
-h3 {
+h1 {
     position : absolute;
     top : 40px;
     left : 40;
@@ -100,7 +100,7 @@ h3 {
     font-size: 20px;
 }
 
-h4 {
+h2 {
     position : absolute;
     top : 60px;
     left : 40;
