@@ -110,7 +110,7 @@
     
             document.getElementById("xvar").innerHTML = data1 +"도";
             document.getElementById("yvar").innerHTML = data2 +"도";
-        },200)
+        },20000000)
  
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
