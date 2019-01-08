@@ -102,15 +102,11 @@
  
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
-        console.log(xPos)
-        console.log(xDiff)
-        setInterval(function(){
-            data1 = xPos;
-            data2 = yPos;
+        
     
-            document.getElementById("xvar").innerHTML = data1 +"도";
-            document.getElementById("yvar").innerHTML = data2 +"도";
-        },200)
+        document.getElementById("xvar").innerHTML = data1 +"도";
+        document.getElementById("yvar").innerHTML = data2 +"도";
+
  
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
