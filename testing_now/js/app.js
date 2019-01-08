@@ -101,8 +101,8 @@
         }
         console.log(xDiff);
         console.log(yDiff);
-        console.log(x);
-        console.log(y);
+        console.log(noGravitation.x);
+        console.log(noGravitation.y);
         console.log(xPos);
         console.log(yPos);
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
