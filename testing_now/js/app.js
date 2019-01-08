@@ -84,6 +84,8 @@
             yDiff,
             xPos,
             yPos,
+            data1 = 0,
+            data2 = 0,
             ball = document.querySelector("#ball");
  
         noGravitation = dataEvent.acceleration;
@@ -100,6 +102,15 @@
  
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
+        console.log(xPos)
+        console.log(xDiff)
+        setInterval(function(){
+            data1 = onOrientationChange.xDiff.toFixed(2);
+            data2 = onOrientationChange.yDiff.toFixed(2);
+    
+            document.getElementById("xvar").innerHTML = data1 +"도";
+            document.getElementById("yvar").innerHTML = data2 +"도";
+        },200)
  
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
@@ -206,12 +217,6 @@
             setError("DeviceMotion Events API is not supported.");
         }
     }
-    setInterval(function(){
-        data1 = onOrientationChange.xPos.toFixed(2);
-        data2 = onOrientationChange.yPos.toFixed(2);
 
-        document.getElementById("data1").innerHTML = data1 +"도";
-        document.getElementById("data2").innerHTML = data2 +"도";
-    },200)
     window.onload = init;
 }());
