@@ -84,8 +84,8 @@
             yDiff,
             xPos,
             yPos,
-            data1,
-            data2,
+            data1 = 0,
+            data2 = 0,
             ball = document.querySelector("#ball");
  
         noGravitation = dataEvent.acceleration;
@@ -104,8 +104,8 @@
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
         setInterval(function(){
-            data1 = xPos;
-            data2 = yPos;
+            data1 = xDiff;
+            data2 = yDiff;
     
             document.getElementById("xvar").innerHTML = data1 +"도";
             document.getElementById("yvar").innerHTML = data2 +"도";
