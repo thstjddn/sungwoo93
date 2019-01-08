@@ -99,8 +99,12 @@
         if (Math.abs(yDiff) > MAX_G) {
             yDiff = yDiff / Math.abs(yDiff) * MAX_G;
         }
-        console.log(xDiff)
-        console.log(yDiff)
+        console.log(xDiff);
+        console.log(yDiff);
+        console.log(dataEvent.x);
+        console.log(dataEvent.y);
+        console.log(xPos);
+        console.log(yPos);
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
