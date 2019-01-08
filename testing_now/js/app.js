@@ -99,18 +99,20 @@
         if (Math.abs(yDiff) > MAX_G) {
             yDiff = yDiff / Math.abs(yDiff) * MAX_G;
         }
-        console.log(xPos)
         console.log(xDiff)
+        console.log(yDiff)
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
         setInterval(function(){
-            data1 = xDiff;
-            data2 = yDiff;
-    
-            document.getElementById("xvar").innerHTML = data1 +"도";
-            document.getElementById("yvar").innerHTML = data2 +"도";
-        },20000000)
+            data1 = xPos;
+            data2 = yPos;
+            xdata = data1.toFixed(1);
+            ydata = data2.toFixed(1);
+
+            document.getElementById("xvar").innerHTML = xdata +"도";
+            document.getElementById("yvar").innerHTML = ydata +"도";
+        },200)
  
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
