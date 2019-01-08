@@ -84,8 +84,8 @@
             yDiff,
             xPos,
             yPos,
-            data1 = 0,
-            data2 = 0,
+            data1,
+            data2,
             ball = document.querySelector("#ball");
  
         noGravitation = dataEvent.acceleration;
@@ -101,16 +101,16 @@
         }
         console.log(xDiff);
         console.log(yDiff);
-        console.log(dataEvent.x);
-        console.log(dataEvent.y);
+        console.log(x);
+        console.log(y);
         console.log(xPos);
         console.log(yPos);
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
         setInterval(function(){
-            data1 = xDiff;
-            data2 = yDiff;
+            data1 = xPos;
+            data2 = yPos;
             xdata = data1.toFixed(1);
             ydata = data2.toFixed(1);
 
