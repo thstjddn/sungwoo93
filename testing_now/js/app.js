@@ -105,8 +105,8 @@
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
         setInterval(function(){
-            data1 = xPos;
-            data2 = yPos;
+            data1 = xDiff;
+            data2 = yDiff;
             xdata = data1.toFixed(1);
             ydata = data2.toFixed(1);
 
