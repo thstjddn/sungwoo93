@@ -105,8 +105,8 @@
         console.log(xPos)
         console.log(xDiff)
         setInterval(function(){
-            data1 = onOrientationChange.xDiff.toFixed(2);
-            data2 = onOrientationChange.yDiff.toFixed(2);
+            data1 = onOrientationChange.xDiff;
+            data2 = onOrientationChange.yDiff;
     
             document.getElementById("xvar").innerHTML = data1 +"도";
             document.getElementById("yvar").innerHTML = data2 +"도";
