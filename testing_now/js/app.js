@@ -104,8 +104,8 @@
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
 
         setInterval(function(){
-            data1 = xDiff.toFixed(3);
-            data2 = yDiff.toFixed(3);
+            data1 = xPos;
+            data2 = yPos;
     
             document.getElementById("xvar").innerHTML = data1 +"도";
             document.getElementById("yvar").innerHTML = data2 +"도";
