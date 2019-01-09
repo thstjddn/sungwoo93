@@ -84,8 +84,6 @@
             yDiff,
             xPos,
             yPos,
-            data1,
-            data2,
             ball = document.querySelector("#ball");
  
         noGravitation = dataEvent.acceleration;
@@ -117,28 +115,7 @@
                 setGlow(false);
             }
         }
-        setInterval(function(){
-            data1 = xPos;
-            data2 = yPos;
-            xdata = data1.toFixed(1);
-            ydata = data2.toFixed(1);
 
-            document.getElementById("xvar").innerHTML = xdata +"도";
-            document.getElementById("yvar").innerHTML = ydata +"도";
-        },200)
-        
-        document.querySelector("#button1").addEventListener('click',function(){
-            alert(xPos)
-        })
-        document.querySelector("#button2").addEventListener('click',function(){
-            alert(xDiff)
-        })
-        document.querySelector("#button3").addEventListener('click',function(){
-            alert(noGravitation.x)
-        })
-        document.querySelector("#button4").addEventListener('click',function(){
-            alert(dataEvent.x)
-        })
     }
  
     /**
