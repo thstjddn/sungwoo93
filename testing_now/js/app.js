@@ -99,25 +99,12 @@
         if (Math.abs(yDiff) > MAX_G) {
             yDiff = yDiff / Math.abs(yDiff) * MAX_G;
         }
-        console.log(xDiff);
-        console.log(yDiff);
-        console.log(noGravitation.x);
-        console.log(noGravitation.y);
-        console.log(xPos);
-        console.log(yPos);
+
+ 
+    
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
-
-        setInterval(function(){
-            data1 = xPos;
-            data2 = yPos;
-            xdata = data1.toFixed(1);
-            ydata = data2.toFixed(1);
-
-            document.getElementById("xvar").innerHTML = xdata +"도";
-            document.getElementById("yvar").innerHTML = ydata +"도";
-        },200)
- 
+        
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
  
@@ -130,6 +117,25 @@
                 setGlow(false);
             }
         }
+        setInterval(function(){
+            data1 = xPos;
+            data2 = yPos;
+            xdata = data1.toFixed(1);
+            ydata = data2.toFixed(1);
+
+            document.getElementById("xvar").innerHTML = xdata +"도";
+            document.getElementById("yvar").innerHTML = ydata +"도";
+        },200)
+        
+        document.querySelector("#button1").addEventListener('click',function(){
+            alert(xPos)
+        })
+        document.querySelector("#button2").addEventListener('click',function(){
+            alert(xDiff)
+        })
+        document.querySelector("#button3").addEventListener('click',function(){
+            alert(noGravitation.x)
+        })
     }
  
     /**
@@ -201,7 +207,8 @@
  
         return true;
     }
- 
+    
+    
     /**
      * Sets the error message to the error display element.
      * @private
