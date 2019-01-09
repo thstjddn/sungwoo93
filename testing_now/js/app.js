@@ -136,6 +136,9 @@
         document.querySelector("#button3").addEventListener('click',function(){
             alert(noGravitation.x)
         })
+        document.querySelector("#button4").addEventListener('click',function(){
+            alert(dataEvent.x)
+        })
     }
  
     /**
