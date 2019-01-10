@@ -8,16 +8,16 @@
             display: grid;
             height: 100%;
             width: 100%;
-            grid-template-columns: 20% 80%;
-            grid-template-rows: 20% 80%;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 30% 70%;
             background-color: #2196F3;
-            padding: 10px;
+            padding: 0;
         }
         .grid {
             background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding : 20px;
-            font-size: 30px;
+            border: 0 solid rgba(0, 0, 0, 0.8);
+            padding : 0;
+            font-size: 15px;
             text-decoration-color: #2196F3;
             text-align: center;
         }
@@ -66,57 +66,26 @@
 
         }
         #bar1{
-            background-image : url("image/bar-top.png");
-            background-size: cover;
             width: auto;
             height: auto;
         }
 
         #bar2{
-            background-image: url("image/bar-left.png");
-            background-size: cover;
             width: auto;
             height: auto;
-        }
-        /* .detail {
-            width: 80%;
-            height: 80%;
-            
-
         }
 
         #error-message {
             text-align: center;
             color: rgba(255, 255, 255, 1);
         } */
-        
-        #ball, #ball1, #ball2, #outer-circle, #glow, #glow1, #glow2, #bar-top,#bar-left {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            background-repeat: no-repeat;
-            display: none;
-        }
-        
-        #ball,#ball1,#ball2 {
-            background-image: url('image/level_bubble.png');
-            width: 64px;
-            height: 64px;
-        }
-        
-        #outer-circle {
-            background-image: url('image/circle_outer.png');
-            background-size: contain;
+
+        /* #outer-circle {
             width: 100px;
             height: 100px;
-        }   
+        }    */
 
-        #glow,#glow1,#glow2 {
-            background-image: url('image/glow.png');
-            background-size: contain;
-            width: 64px;
-            height: 64px;
-        }
+
         
     </style>
     <meta charset="utf-8" />
@@ -166,6 +135,7 @@
                     </div>
                 </div>
                 <div id="outer-circle">
+                    <img src = "image/circle_outer" style="object-fit: contain" id="outer-circle">
                 </div>
             </div>
         </div>
