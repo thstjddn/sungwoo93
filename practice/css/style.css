@@ -96,7 +96,7 @@ body {
 
 #glow-div{
     position:absolute;
-    display:none;
+    display:block;
     left:366.5px;
     top:299px;
     /* width: 100%;
@@ -107,6 +107,7 @@ body {
     /* background-image: url('../image/glow.png'); */
     /* background-size: contain; */
     /* display:none; */
+    display:none;
     width: 64px;
     height: 64px;
 }
