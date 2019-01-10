@@ -51,7 +51,11 @@ body {
     width: 100%;
     height: 100%;
 }
- 
+#ball-main {
+    height : 100%;
+}
+
+#
 #error-message {
     text-align: center;
     color: rgba(255, 255, 255, 1);
@@ -64,7 +68,8 @@ body {
     background-repeat: no-repeat;
     display: none;
 }
- 
+
+
 #ball {
     /* background-image: url('../image/level_bubble.png'); */
     width: 64px;
@@ -89,14 +94,20 @@ body {
     font-size: 20px;
 }
 
-#glow {
+#glow{
+    position:absolute;
+    display:none;
+    left:366.5px;
+    top:299px;
+    /* width: 100%;
+    height: 100%;  */
+}
+
+#glow-image {
     /* background-image: url('../image/glow.png'); */
     /* background-size: contain; */
-    display:none;
+    /* display:none; */
     width: 64px;
     height: 64px;
-    left : 366.5px;
-    top: 299px;
-    /* margin : auto auto auto auto; */
-
 }
+       
