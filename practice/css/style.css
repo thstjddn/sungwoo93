@@ -57,7 +57,7 @@ body {
     color: rgba(255, 255, 255, 1);
 }
  
-#ball, #outer-circle {
+#ball, #outer-circle, #glow {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -90,10 +90,13 @@ body {
 }
 
 #glow {
-    /* background-image: url('../image/glow.png'); */
+    background-image: url('../image/glow.png');
     
     background-size: contain;
     width: 64px;
     height: 64px;
-    margin : auto auto auto auto;
+    left : 366.5px;
+    top: 299px;
+    /* margin : auto auto auto auto; */
+
 }
