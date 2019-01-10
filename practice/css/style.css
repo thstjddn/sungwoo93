@@ -46,44 +46,18 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.993);
 }
-.maingrid {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 20% 80%;
-    background-color: rgba(0, 0, 0, 0.993);
-    padding: 10px
-}
-
-.grid{
-    background-color : rgba(0,0,0,0.993);
-}
-
-#bar1{
-    background-image : url("../image/bar-top.png");
-    background-size: contain;
-    width: auto;
-    height: auto;
-}
-
-#bar2{
-    background-image: url("../image/bar-left.png");
-    background-size: contain;
-    width: auto;
-    height: auto;
-}
+ 
 .detail {
-    width: 80%;
-    height: 80%;
-    
-
+    width: 100%;
+    height: 100%;
 }
-
+ 
 #error-message {
     text-align: center;
     color: rgba(255, 255, 255, 1);
 }
  
-#ball, #ball1, #ball2, #outer-circle, #glow, #glow1, #glow2, #bar-top,#bar-left {
+#ball, #outer-circle, #glow {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -91,7 +65,7 @@ body {
     display: none;
 }
  
-#ball,#ball1,#ball2 {
+#ball {
     background-image: url('../image/level_bubble.png');
     width: 64px;
     height: 64px;
@@ -103,8 +77,41 @@ body {
     width: auto;
     height: auto;
 }   
+#show {
+    position : absolute;
+    top : 20px;
+    left : 40;
+    width : 100%;
+    margin : 0 auto;
+    width : 300px;
+    height : 50px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+h1 {
+    position : absolute;
+    top : 40px;
+    left : 40;
+    width : 100%;
+    margin : 0 auto;
+    width : 300px;
+    height : 50px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
 
-#glow,#glow1,#glow2 {
+h2 {
+    position : absolute;
+    top : 60px;
+    left : 40;
+    width : 100%;
+    margin : 0 auto;
+    width : 300px;
+    height : 50px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+#glow {
     background-image: url('../image/glow.png');
     background-size: contain;
     width: 64px;
