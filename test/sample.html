@@ -61,12 +61,109 @@ body{
     border:0;
 }
 .grid-item {
-  background-color: rgba(0, 0, 0);
-  border: 0 solid rgba(0, 0, 0);
-  padding: 0;
-  font-size: 15px;
-  text-align: center;
+    position: relative;
+    background-color: rgba(0, 0, 0);
+    border: 0 solid rgba(0, 0, 0);
+    padding: 0;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
 }
+#outer-circle{
+    display : inline-block;
+    margin-right : 0;
+    width : 300px;
+    height: 300px;
+    right : 0px;
+    margin : 0;
+    border: 0;
+    padding : 0;
+
+}
+#ball, #glow{
+    position:absolute;
+    top : 0;
+    left:0;
+    display:inline-block;
+    width : 50px;
+    height: 50px;
+}
+#outer-circle img{
+    width : 300px;
+    height: 300px;
+}
+#ball img{
+    position:absolute;
+    top : 0;
+    left:0;
+    display:block;
+    width:50px;
+    height:50px;
+}
+#glow img{
+    position:absolute;
+    display:block;
+    width: 50px;
+    height: 50px;
+}
+.grid-container{
+    width:100%;
+    height:100%;
+}
+#error-message {
+    text-align: center;
+    display:none;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* #outer-circle{    
+    background-image: url('image/circle_outer.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 100%;
+}
+#bar-top{
+    position:absolute;
+    background-image:url("image/bar-top.png");
+    width :100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding:0;
+    border:0;
+    margin:0;
+
+}
+#bar-left{
+    position:absolute;
+    background-image:url("image/bar-left.png");
+    width :100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding:0;
+    border:0;
+    margin:0;
+}
+
+#ball{
+    position:absolute;
+    background-image: url("image/level_bubble.png");
+    background-repeat: no-repeat;
+    text-align:center;
+    height: 100%;
+    width: 100%;
+
+}
+#glow{
+    position:absolute;
+    background-image: url("image/glow.png");
+    background-repeat: no-repeat;
+    height:100%;
+    width:100%;
+
+} */
 
 </style>
 </head>
@@ -83,18 +180,33 @@ body{
             </div>    
 
         <div id= "main-detail" class="grid-container">
-            <div class="xy grid-item"></div>
-            <div class="bar-top grid-item">
-                <img src = "image/bar-top.png" style="object-fit: contain; vertical-align: middle; text-align:center"/>
+            <div id="error-message">
+                Unknown error Occured.
             </div>
-            <div class="bar-left grid-item">
-                <img src = "image/bar-left.png" style="width:auto; height:auto; object-fit: contain; align-content: center"/>
+            <div class="xy grid-item"></div>
+            <div class="grid-item">
+                <div id="bar-top">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div id="bar-left">
+                </div>
             </div>  
-            <div class="outer-circle grid-item">
-                <img src = "image/circle_outer.png" style="object-fit: contain; vertical-align: middle"/>
+            <div class="grid-item">
+                <div id="ball">
+                    <img src="image/level_bubble.png"/>
+                        <div id = "glow">
+                            <img src="image/glow.png"/>
+                        </div>
+                </div>
+                <div id = "outer-circle">
+                    <img src="image/circle_outer.png">
+                </div>
             </div>  
         </div>
         </div>
     </div>
+    <script type="text/javascript" src = "js/app.js"></script>
 </body>
+
 </html>

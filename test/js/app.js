@@ -17,8 +17,8 @@
 (function() {
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
-        ballRadius = 32,
-        innerRadius = 40,
+        ballRadius = 25,
+        innerRadius = 37.5,
         outerRadius,
         screenWidth,
         screenHeight,
@@ -137,8 +137,8 @@
      * @private
      */
     function setDefaultVariables() {
-        screenWidth = window.innerWidth;
-        screenHeight = window.innerHeight - HEADER_HEIGHT;
+        screenWidth = 300;
+        screenHeight = 300;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         centerX = screenWidth / 2;
         centerY = (screenHeight / 2) + HEADER_HEIGHT;
