@@ -141,7 +141,7 @@
         screenHeight = 300;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         centerX = screenWidth / 2;
-        centerY = (screenHeight / 2) + HEADER_HEIGHT;
+        centerY = (screenHeight / 2);
  
         if (screenWidth <= 0 || screenHeight <= 0) {
             return false;
