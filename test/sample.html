@@ -8,17 +8,19 @@
 <style>
 
 .header {
+    display:none;
     position: absolute;
     width: 100%;
     height: 50px;
     margin-top:-50px;
-    background-color: rgba(0, 80, 179, 1);
+    background-color: rgb(0, 0, 0);
     z-index: 999;
     display: table;
 }
 
 .header-text {
-    color:rgb(249, 251, 252);
+    display:none;
+    color:rgb(0, 0, 0);
     font-size: 1.5em; 
     vertical-align: middle;
     text-align: center;
@@ -74,13 +76,38 @@ body{
     margin-right : 0;
     width : 250px;
     height: 250px;
-    right : 0px;
     margin : 0;
     border: 0;
     padding : 0;
 
 }
-#ball, #glow{
+#bartop{
+    display : inline-block;
+    margin-right : 0;
+    width : 250px;
+    height : 62.5px;
+    margin : 0;
+    border: 0;
+    padding : 0;
+}
+#bartop img{
+    width : 250px;
+    height : 62.5px;
+}
+
+#bar-left{
+    display : inline-block;
+    height : 250px;
+    width : 62.5px;
+    margin : 0;
+    border: 0;
+    padding : 0;
+}
+#bar-left img{
+    height : 250px;
+    width : 62.5px;
+}
+#ball, #glow, #ball1, #glow1, #ball2, #glow2{
     position:absolute;
     top : 0;
     left:0;
@@ -92,7 +119,7 @@ body{
     width : 250px;
     height: 250px;
 }
-#ball img{
+#ball img, #ball1 img, #ball2 img{
     position:absolute;
     top : 0;
     left:0;
@@ -185,11 +212,25 @@ body{
             </div>
             <div class="xy grid-item"></div>
             <div class="grid-item">
-                <div id="bar-top">
+                <div id="ball1">
+                    <img src="image/level_bubble.png"/>
+                        <div id = "glow1">
+                            <img src="image/glow.png"/>
+                        </div>
+                </div>
+                <div id="bartop">
+                    <img src="image/bar-top.png"/>
                 </div>
             </div>
             <div class="grid-item">
-                <div id="bar-left">
+                <div id="ball2">
+                    <img src="image/level_bubble.png"/>
+                        <div id = "glow2">
+                            <img src="image/glow.png"/>
+                        </div>
+                </div>
+                <div id="barleft">
+                    <img src="image/bar-left.png"/>
                 </div>
             </div>  
             <div class="grid-item">
@@ -207,6 +248,7 @@ body{
         </div>
     </div>
     <script type="text/javascript" src = "js/app.js"></script>
+    <!-- <script type="text/javascript" src = "js/app-top.js"></script> -->
 </body>
 
 </html>

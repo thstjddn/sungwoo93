@@ -158,7 +158,7 @@
         var ball = document.querySelector("#ball"),
             outerCircle = document.querySelector("#outer-circle"),
             errorMessage = document.querySelector("#error-message");
- 
+
         outerCircle.style.left = centerX - outerRadius + "px";
         outerCircle.style.top = centerY - outerRadius + "px";
         outerCircle.style.width = (outerRadius * 2) + "px";
