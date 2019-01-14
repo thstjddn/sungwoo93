@@ -18,14 +18,31 @@
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
         ballRadius = 20,
+        // 여기서부터 수정
+        ball1Radius = 20,
+        ball2Radius = 20,
         innerRadius = 31.25,
         outerRadius,
+        outerRadius1,
+        outerRadius2,
         screenWidth,
+        screenWidth1,
+        screenWidth2,
         screenHeight,
+        screenHeight1,
+        screenHeight2,
         centerX,
         centerY,
+        centerX1,
+        centerY1,
+        centerX2,
+        centerY2,
         statusGlow = false;
- 
+        statusGlow1 = false;
+        statusGlow2 = false;
+        
+        // 변수 추가 생성
+
     /**
      * Checks the (x, y) is in the circle with radius r.
      * @private
