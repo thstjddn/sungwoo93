@@ -53,6 +53,14 @@
     function inCircleRange(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
+    function inCircleRange1(x, r) {
+        return(x  <= r ) ? true : false;
+    }
+
+    function inCircleRange2(y, r) {
+        return ( y <= r) ? true : false;
+    }
+    
  
     /**
      * Removes all child of the element.
@@ -154,7 +162,7 @@
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
         ball1.style.left = centerX - ball1Radius + xPos + "px";
-        ball2.style.top = centerY- ball2Radius + xPos + "px";
+        ball2.style.top = centerY- ball2Radius + yPos + "px";
 
         if (inCircleRange(xPos, yPos, innerRadius - ballRadius)) {
             if (statusGlow === false) {
@@ -165,8 +173,31 @@
                 setGlow(false);
             }
         }
+
+        if (inCircleRange1(xPos,  innerRadius - ballRadius)) {
+            if (statusGlow1 === false) {
+                setGlow(true);
+            }
+        } else {
+            if (statusGlow1 === true) {
+                setGlow(false);
+            }
+        }
+
+        if (inCircleRange2( yPos, innerRadius - ballRadius)) {
+            if (statusGlow2 === false) {
+                setGlow(true);
+            }
+        } else {
+            if (statusGlow2 === true) {
+                setGlow(false);
+            }
+        }
     }
- 
+          
+
+
+
     /**
      * Handles the hardware key event.
      * @private
