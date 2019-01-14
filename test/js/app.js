@@ -176,21 +176,21 @@
 
         if (inCircleRange1(xPos,  innerRadius - ballRadius)) {
             if (statusGlow1 === false) {
-                setGlow(true);
+                setGlow1(true);
             }
         } else {
             if (statusGlow1 === true) {
-                setGlow(false);
+                setGlow1(false);
             }
         }
 
         if (inCircleRange2( yPos, innerRadius - ballRadius)) {
             if (statusGlow2 === false) {
-                setGlow(true);
+                setGlow2(true);
             }
         } else {
             if (statusGlow2 === true) {
-                setGlow(false);
+                setGlow2(false);
             }
         }
     }
