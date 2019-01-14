@@ -53,12 +53,12 @@
     function inCircleRange(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
-    function inCircleRange1(x, r) {
-        return(x  <= r ) ? true : false;
+    function inCircleRange1(x, y, r) {
+        return(x * x + y * y <= r * r) ? true : false;
     }
 
-    function inCircleRange2(y, r) {
-        return ( y <= r) ? true : false;
+    function inCircleRange2(x, y, r) {
+        return (x * x + y * y <= r * r) ? true : false;
     }
     
  
@@ -174,7 +174,7 @@
             }
         }
 
-        if (inCircleRange1(xPos,  innerRadius - ballRadius)) {
+        if (inCircleRange1(xPos, yPos,  innerRadius - ballRadius)) {
             if (statusGlow1 === false) {
                 setGlow1(true);
             }
@@ -184,7 +184,7 @@
             }
         }
 
-        if (inCircleRange2( yPos, innerRadius - ballRadius)) {
+        if (inCircleRange2(xPos, yPos, innerRadius - ballRadius)) {
             if (statusGlow2 === false) {
                 setGlow2(true);
             }
