@@ -174,7 +174,7 @@
             }
         }
 
-        if (inCircleRange1(xPos, yPos,  innerRadius - ballRadius)) {
+        if (inCircleRange1(xPos, yPos,  innerRadius - ball1Radius)) {
             if (statusGlow1 === false) {
                 setGlow1(true);
             }
@@ -184,7 +184,7 @@
             }
         }
 
-        if (inCircleRange2(xPos, yPos, innerRadius - ballRadius)) {
+        if (inCircleRange2(xPos, yPos, innerRadius - ball2Radius)) {
             if (statusGlow2 === false) {
                 setGlow2(true);
             }
