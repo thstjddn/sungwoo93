@@ -131,6 +131,8 @@
             xPos,
             yPos,
             ball = document.querySelector("#ball");
+            ball1 = document.querySelector("#ball1");
+            ball2 = document.querySelector("#ball2");
  
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
