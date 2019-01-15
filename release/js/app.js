@@ -147,13 +147,15 @@
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
         
+        
+        
         xDiff = dataEvent.x - noGravitation.x;
         if (Math.abs(xDiff) > MAX_G) {
             xDiff = xDiff / Math.abs(xDiff) * MAX_G;
         }
         yDiff = -1 * (dataEvent.y - noGravitation.y);
         if (Math.abs(yDiff) > MAX_G) {
-            yDiff = yDiff / Math.abs(yDiff) * MAX_G;
+            yDiff = Diff / Math.abs(yDiff) * MAX_G;
         }
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
@@ -334,6 +336,7 @@
         }
         mobileos = getMobileOperatingSystem();
         console.log(mobileos);
+
     }
     
     function getMobileOperatingSystem() {
@@ -358,3 +361,4 @@
 
     window.onload = init;
 }());
+

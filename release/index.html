@@ -58,6 +58,7 @@ body{
     grid-template-columns: 20% 80%;
     grid-template-rows: 20% 80%;
     background-color: rgb(0, 0, 0);
+    color : rgb(255, 255, 255);
     padding: 0;
     margin:0;
     border:0;
@@ -67,9 +68,7 @@ body{
     background-color: rgba(0, 0, 0);
     border: 0 solid rgba(0, 0, 0);
     padding: 0;
-    font-size: 15px;
-    text-align: center;
-    vertical-align: middle;
+    font-size: 15px; 
 }
 #outer-circle{
     display : inline-block;
@@ -143,64 +142,26 @@ body{
     display:none;
     color: rgba(255, 255, 255, 1);
 }
-
-/* #outer-circle{    
-    background-image: url('image/circle_outer.png');
-    background-size: contain;
-    background-repeat:no-repeat;
-    width: 100%;
-    height: 100%;
+.text-value{
+    color:rgb(255, 255, 255);
+    font-size: 1.5em; 
+    margin : 0;
+    padding : 0;
+    display : inline;
 }
-#bar-top{
-    position:absolute;
-    background-image:url("image/bar-top.png");
-    width :100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding:0;
-    border:0;
-    margin:0;
+#output {
+    color:rgb(255, 255, 255);
+    font-size: 1.5em; 
+    margin : 0;
+    padding : 0;
 
 }
-#bar-left{
-    position:absolute;
-    background-image:url("image/bar-left.png");
-    width :100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding:0;
-    border:0;
-    margin:0;
-}
-
-#ball{
-    position:absolute;
-    background-image: url("image/level_bubble.png");
-    background-repeat: no-repeat;
-    text-align:center;
-    height: 100%;
-    width: 100%;
-
-}
-#glow{
-    position:absolute;
-    background-image: url("image/glow.png");
-    background-repeat: no-repeat;
-    height:100%;
-    width:100%;
-
-} */
 
 </style>
 </head>
 <body>
     <div id="container">
         <div id="page-main" class="page">
-            <!-- <div id="error-message">
-                Unknown error Occured.
-            </div> -->
             <div id="main-header" class="header">
                 <div id="main-header-text" class="header-text">
                     spirit level
@@ -244,12 +205,14 @@ body{
                 <div id = "outer-circle">
                     <img src="image/circle_outer.png">
                 </div>
+                <p class = "output"></p>
+
             </div>  
         </div>
         </div>
     </div>
     <script type="text/javascript" src = "js/app.js"></script>
-    <!-- <script type="text/javascript" src = "js/app-top.js"></script> -->
+    <script src = "js/XYvalue.js"></script>
 </body>
 
 </html>
