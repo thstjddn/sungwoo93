@@ -141,17 +141,28 @@ body{
     display:none;
     color: rgba(255, 255, 255, 1);
 }
+.text-value{
+    color:rgb(255, 255, 255);
+    font-size: 1.5em; 
+    margin : 0;
+    padding : 0;
+    display : inline;
+}
 #xvalue {
     color:rgb(255, 255, 255);
     font-size: 1.5em; 
     margin : 0;
     padding : 0;
+    display : inline;
+
 }
 #yvalue {
     color:rgb(255, 255, 255);
     font-size: 1.5em; 
     margin : 0;
     padding : 0;
+    display : inline;
+
 }
 
 </style>
@@ -202,8 +213,8 @@ body{
                 <div id = "outer-circle">
                     <img src="image/circle_outer.png">
                 </div>
-                <p id = "xvalue"> X : </p>
-                <p id = "yvalue"> Y : </p>
+                <p class = "text-value">X:<p id = "xvalue"></p></p>
+                <p class = "text-value">Y:<p id = "yvalue"></p></p>
             </div>  
         </div>
         </div>
