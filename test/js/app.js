@@ -147,29 +147,25 @@
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
         
-        if (mobileos === "iOS"){
-            xDiff = -1 * (dataEvent.x - noGravitation.x);
-            if (Math.abs(xDiff) > MAX_G) {
-                xDiff = xDiff / Math.abs(xDiff) * MAX_G;
-            }
-            yDiff = (dataEvent.y - noGravitation.y);
-            if (Math.abs(yDiff) > MAX_G) {
-                yDiff = yDiff / Math.abs(yDiff) * MAX_G;
-            }
-        }else{
-            xDiff = (dataEvent.x - noGravitation.x);
-            if (Math.abs(xDiff) > MAX_G) {
-                xDiff = xDiff / Math.abs(xDiff) * MAX_G;
-            }
-            yDiff = -1 * (dataEvent.y - noGravitation.y);
-            if (Math.abs(yDiff) > MAX_G) {
-                yDiff = yDiff / Math.abs(yDiff) * MAX_G;
-            }
+        xDiff = dataEvent.x - noGravitation.x;
+        if (Math.abs(xDiff) > MAX_G) {
+            xDiff = xDiff / Math.abs(xDiff) * MAX_G;
         }
- 
-    
+        yDiff = -1 * (dataEvent.y - noGravitation.y);
+        if (Math.abs(yDiff) > MAX_G) {
+            yDiff = yDiff / Math.abs(yDiff) * MAX_G;
+        }
+
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
+
+        if (mobileos === "iOS"){
+            xPos = -xPos;
+            yPos = -yPos;
+        }else{
+            xPos = xPos;
+            yPos = yPos;
+        }
         
         ball.style.left = centerX - ballRadius + xPos + "px";
         ball.style.top = centerY - ballRadius + yPos + "px";
