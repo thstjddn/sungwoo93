@@ -140,6 +140,14 @@
             yDiff,
             xPos,
             yPos,
+            x_buff,
+            y_buff,
+            z_buff,
+            xAxis,
+            yAxis,
+            zAxis,
+            roll = 0;
+            pitch = 0;
             ball = document.querySelector("#ball");
             ball1 = document.querySelector("#ball1");
             ball2 = document.querySelector("#ball2");
@@ -155,6 +163,16 @@
         if (Math.abs(yDiff) > MAX_G) {
             yDiff = yDiff / Math.abs(yDiff) * MAX_G;
         }
+        x_buff = dataEvent.x;
+        y_buff = dataEvent.y;
+        z_buff = dataEvent.z;
+
+        xAxis = float(x_buff);
+        yAxis = float(y_buff);
+        zAxis = float(z_buff);
+
+        roll = Math.atan2(yAxis, zAxis) * 57.3 ;
+        pitch = Math.atan2((-xAxis), sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
@@ -355,6 +373,12 @@
     
         return "unknown";
     }
+
+    setInterval(function(){
+
+        document.getElementById("xvalue").innerHTML = roll + "°";
+        document.getElementById("yvalue").innerHTML = pitch + "°";
+    },200)
 
     window.onload = init;
 }());
