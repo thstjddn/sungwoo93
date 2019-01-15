@@ -158,19 +158,18 @@
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
-
-        if (mobileos === "iOS"){
-            xPos = -xPos;
-            yPos = -yPos;
-        }else{
-            xPos = xPos;
-            yPos = yPos;
-        }
         
-        ball.style.left = centerX - ballRadius + xPos + "px";
-        ball.style.top = centerY - ballRadius + yPos + "px";
-        ball1.style.left = centerX - ball1Radius + xPos + "px";
-        ball2.style.top = centerY- ball2Radius + yPos + "px";
+        if (mobileos === "iOS"){
+            ball.style.left = centerX - ballRadius - xPos + "px";
+            ball.style.top = centerY - ballRadius - yPos + "px";
+            ball1.style.left = centerX - ball1Radius - xPos + "px";
+            ball2.style.top = centerY- ball2Radius - yPos + "px";
+        }else{
+            ball.style.left = centerX - ballRadius + xPos + "px";
+            ball.style.top = centerY - ballRadius + yPos + "px";
+            ball1.style.left = centerX - ball1Radius + xPos + "px";
+            ball2.style.top = centerY- ball2Radius + yPos + "px";
+        }
 
         if (inCircleRange(xPos, yPos, innerRadius - ballRadius)) {
             if (statusGlow === false) {
