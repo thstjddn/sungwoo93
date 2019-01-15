@@ -146,8 +146,6 @@
             xAxis,
             yAxis,
             zAxis,
-            roll = 0;
-            pitch = 0;
             ball = document.querySelector("#ball");
             ball1 = document.querySelector("#ball1");
             ball2 = document.querySelector("#ball2");
@@ -167,12 +165,12 @@
         y_buff = dataEvent.y;
         z_buff = dataEvent.z;
 
-        xAxis = float(x_buff);
-        yAxis = float(y_buff);
-        zAxis = float(z_buff);
+        xAxis = x_buff.toFixed(1);
+        yAxis = y_buff.float(1);
+        zAxis = z_buff.float(1);
 
-        roll = Math.atan2(yAxis, zAxis) * 57.3 ;
-        pitch = Math.atan2((-xAxis), sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
+        xvalue = Math.atan2(yAxis, zAxis) * 57.3 ;
+        yvalue = Math.atan2((-xAxis), sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
@@ -376,8 +374,8 @@
 
     setInterval(function(){
 
-        document.getElementById("xvalue").innerHTML = roll + "°";
-        document.getElementById("yvalue").innerHTML = pitch + "°";
+        document.getElementById("xvalue").innerHTML = xvalue + "°";
+        document.getElementById("yvalue").innerHTML = yvalue + "°";
     },200)
 
     window.onload = init;
