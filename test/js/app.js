@@ -163,8 +163,8 @@
         yAxis = noGravitation.y;
         zAxis = noGravitation.z;
 
-        xvalue = Math.atan2(yAxis, zAxis) * 57.3 ;
-        yvalue = Math.atan2((-xAxis), Math.sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
+        xvalue = Math.atan2(xAxis, Math.sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
+        yvalue = Math.atan2(yAxis, Math.sqrt(xAxis * xAxis + zAxis * zAxis)) * 57.3 ;
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
