@@ -37,9 +37,11 @@
         centerY1,
         centerX2,
         centerY2,
+        mobileos,
         statusGlow = false;
         statusGlow1 = false;
         statusGlow2 = false;
+
         
         // 변수 추가 생성
 
@@ -144,16 +146,26 @@
  
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
- 
-        xDiff = dataEvent.x - noGravitation.x;
-        if (Math.abs(xDiff) > MAX_G) {
-            xDiff = xDiff / Math.abs(xDiff) * MAX_G;
+        
+        if (mobileos === "iOS"){
+            xDiff = -1 * (dataEvent.x - noGravitation.x);
+            if (Math.abs(xDiff) > MAX_G) {
+                xDiff = xDiff / Math.abs(xDiff) * MAX_G;
+            }
+            yDiff = (dataEvent.y - noGravitation.y);
+            if (Math.abs(yDiff) > MAX_G) {
+                yDiff = yDiff / Math.abs(yDiff) * MAX_G;
+            }
+        }else{
+            xDiff = (dataEvent.x - noGravitation.x);
+            if (Math.abs(xDiff) > MAX_G) {
+                xDiff = xDiff / Math.abs(xDiff) * MAX_G;
+            }
+            yDiff = -1 * (dataEvent.y - noGravitation.y);
+            if (Math.abs(yDiff) > MAX_G) {
+                yDiff = yDiff / Math.abs(yDiff) * MAX_G;
+            }
         }
-        yDiff = -1 * (dataEvent.y - noGravitation.y);
-        if (Math.abs(yDiff) > MAX_G) {
-            yDiff = yDiff / Math.abs(yDiff) * MAX_G;
-        }
-
  
     
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
@@ -325,6 +337,27 @@
         } else {
             setError("DeviceMotion Events API is not supported.");
         }
+        getMobileOperatingSystem();
+    }
+    
+    function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+            // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            mobileos = "Windows Phone";
+        }
+    
+        if (/android/i.test(userAgent)) {
+            mobileos = "Android";
+        }
+    
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            mobileos = "iOS";
+        }
+    
+        mobileos = "unknown";
     }
 
     window.onload = init;
