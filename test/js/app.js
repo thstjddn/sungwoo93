@@ -333,6 +333,7 @@
             setError("DeviceMotion Events API is not supported.");
         }
         getMobileOperatingSystem();
+        console.log(mobileos);
     }
     
     function getMobileOperatingSystem() {
