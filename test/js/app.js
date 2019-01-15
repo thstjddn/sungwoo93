@@ -140,9 +140,6 @@
             yDiff,
             xPos,
             yPos,
-            x_buff,
-            y_buff,
-            z_buff,
             xAxis,
             yAxis,
             zAxis,
@@ -159,18 +156,15 @@
         }
         yDiff = -1 * (dataEvent.y - noGravitation.y);
         if (Math.abs(yDiff) > MAX_G) {
-            yDiff = yDiff / Math.abs(yDiff) * MAX_G;
+            yDiff = Diff / Math.abs(yDiff) * MAX_G;
         }
-        // x_buff = dataEvent.x;
-        // y_buff = dataEvent.y;
-        // z_buff = dataEvent.z;
 
-        // xAxis = x_buff.toFixed(1);
-        // yAxis = y_buff.float(1);
-        // zAxis = z_buff.float(1);
+        xAxis = noGravitation.x;
+        yAxis = noGravitation.y;
+        zAxis = noGravitation.z;
 
-        // xvalue = Math.atan2(yAxis, zAxis) * 57.3 ;
-        // yvalue = Math.atan2((-xAxis), sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
+        xvalue = Math.atan2(yAxis, zAxis) * 57.3 ;
+        yvalue = Math.atan2((-xAxis), Math.sqrt(yAxis * yAxis + zAxis * zAxis)) * 57.3 ;
 
         xPos = (outerRadius - ballRadius) * xDiff / MAX_G;
         yPos = (outerRadius - ballRadius) * yDiff / MAX_G;
@@ -350,6 +344,7 @@
         }
         mobileos = getMobileOperatingSystem();
         console.log(mobileos);
+
     }
     
     function getMobileOperatingSystem() {
@@ -372,11 +367,14 @@
         return "unknown";
     }
 
-    // setInterval(function(){
+    setInterval(function(){
+        
+        xx = xvalue;
+        yy = yvalue;
 
-    //     document.getElementById("xvalue").innerHTML = xvalue + "°";
-    //     document.getElementById("yvalue").innerHTML = yvalue + "°";
-    // },200)
+        document.getElementById("xvalue").innerHTML = xx + "°";
+        document.getElementById("yvalue").innerHTML = yy + "°";
+    },200)
 
     window.onload = init;
 }());
