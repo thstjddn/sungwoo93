@@ -120,6 +120,8 @@ body{
     display:inline-block;
     width : auto;
     height: auto;
+    max-width : 64px;
+    max-height : 64px;
 }
 
 #glow, #glow1, #glow2{
@@ -129,6 +131,8 @@ body{
     display:inline-block;
     width : auto;
     height: auto;
+    max-width : 64px;
+    max-height : 64px;
 }
 
 #outer-circle img{
@@ -140,14 +144,12 @@ body{
     position:absolute;
     top : 0;
     left:0;
-    display:block;
     width:auto;
     height:auto;
 }
 
 #glow img, #glow1 img, #glow2 img{
     position:absolute;
-    display:block;
     width: auto;
     height: auto;
 }

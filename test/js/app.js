@@ -17,10 +17,10 @@
 (function() {
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
-        ballRadius = outerRadius / 0.56,
+        ballRadius,
         // 여기서부터 수정
-        ball1Radius = outerRadius / 0.56,
-        ball2Radius = outerRadius / 0.56,
+        ball1Radius,
+        ball2Radius,
         innerRadius = outerRadius / 4,
         outerRadius,
         outerRadius1,
@@ -91,7 +91,7 @@
         }
  
         if (status === true) {
-            glow.style.display = "block";
+            glow.style.display = "inline-block";
         } else {
             glow.style.display = "none";
         }
@@ -106,7 +106,7 @@
         }
  
         if (status === true) {
-            glow1.style.display = "block";
+            glow1.style.display = "inline-block";
         } else {
             glow1.style.display = "none";
         }
@@ -121,7 +121,7 @@
         }
  
         if (status === true) {
-            glow2.style.display = "block";
+            glow2.style.display = "inline-block";
         } else {
             glow2.style.display = "none";
         }
@@ -233,6 +233,9 @@
         screenHeight1 = window.innerHeight * 0.7;
         screenWidth2 = window.innerwidth * 0.3 * 0.7;
         screenHeight2 = window.innerHeight * 0.7;
+        ballRadius = outerRadius / 0.56;
+        ball1Radius = outerRadius / 0.56;
+        ball2Radius = outerRadius / 0.56;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = (screenWidth1 > screenHeight1) ? (screenHeight1 / 2) : (screenWidth1 / 2);
         outerRadius2 = (screenWidth2 > screenHeight2) ? (screenHeight2 / 2) : (screenWidth2 / 2);
