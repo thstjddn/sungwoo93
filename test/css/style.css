@@ -75,8 +75,8 @@ body{
 #outer-circle{
     display : inline-block;
     margin-right : 0;
-    width : 250px;
-    height: 250px;
+    width : auto;
+    height: auto;
     margin : 0;
     border: 0;
     padding : 0;
@@ -94,23 +94,23 @@ body{
 }
 
 #bartop img{
-    width : 250px;
-    height : 62.5px;
+    width : auto;
+    height : auto;
 }
 
 #barleft{
     display : block;
     margin-right : 0;
-    width : 62.5px;
-    height : 250px;
+    width : auto;
+    height : auto;
     margin : 0;
     border: 0;
     padding : 0;
 }
 
 #barleft img{
-    width : 62.5px;
-    height : 250px;
+    width : auto;
+    height : auto;
 }
 
 #ball, #ball1, #ball2{
@@ -118,8 +118,8 @@ body{
     top : 0;
     left:0;
     display:inline-block;
-    width : 40px;
-    height: 40px;
+    width : auto;
+    height: auto;
 }
 
 #glow, #glow1, #glow2{
@@ -127,13 +127,13 @@ body{
     top : 0;
     left:0;
     display:inline-block;
-    width : 40px;
-    height: 40px;
+    width : auto;
+    height: auto;
 }
 
 #outer-circle img{
-    width : 250px;
-    height: 250px;
+    width : auto;
+    height: auto;
 }
 
 #ball img, #ball1 img, #ball2 img{
@@ -141,15 +141,15 @@ body{
     top : 0;
     left:0;
     display:block;
-    width:40px;
-    height:40px;
+    width:auto;
+    height:auto;
 }
 
-#glow img{
+#glow img, #glow1 img, #glow2 img{
     position:absolute;
     display:block;
-    width: 40px;
-    height: 40px;
+    width: auto;
+    height: auto;
 }
 
 .grid-container{

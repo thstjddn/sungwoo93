@@ -17,11 +17,11 @@
 (function() {
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
-        ballRadius = 20,
+        ballRadius = outerRadius / 0.56,
         // 여기서부터 수정
-        ball1Radius = 20,
-        ball2Radius = 20,
-        innerRadius = 31.25,
+        ball1Radius = outerRadius / 0.56,
+        ball2Radius = outerRadius / 0.56,
+        innerRadius = outerRadius / 4,
         outerRadius,
         outerRadius1,
         outerRadius2,
@@ -227,12 +227,12 @@
      * @private
      */
     function setDefaultVariables() {
-        screenWidth = 250;
-        screenHeight = 250;
-        screenWidth1 = 250;
-        screenHeight1 = 62.5;
-        screenWidth2 = 62.5;
-        screenHeight2 = 250;
+        screenWidth = window.innerwidth * 0.7;
+        screenHeight = window.innerHeight * 0.7;
+        screenWidth1 = window.innerwidth * 0.3 * 0.7;
+        screenHeight1 = window.innerHeight * 0.7;
+        screenWidth2 = window.innerwidth * 0.3 * 0.7;
+        screenHeight2 = window.innerHeight * 0.7;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = (screenWidth1 > screenHeight1) ? (screenHeight1 / 2) : (screenWidth1 / 2);
         outerRadius2 = (screenWidth2 > screenHeight2) ? (screenHeight2 / 2) : (screenWidth2 / 2);
