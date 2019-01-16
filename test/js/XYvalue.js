@@ -8,7 +8,7 @@ function handleOrientation(event) {
   var y = event.beta; // In degree in the range [-90,90]
   
   output.innerHTML  = "X : " + x.toFixed(1) + "\n";
-  output.innerHTML += "Y : " + y.toFixed(1) + "\n";
+  output1.innerHTML  = "Y : " + y.toFixed(1) + "\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
