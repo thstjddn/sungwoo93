@@ -84,7 +84,7 @@
      * @param {boolean} status - The requested status of the glow
      */
     function setGlow(status) {
-        var glow = document.querySelector("#glow");
+        var glow = document.querySelector("#glow-img");
  
         if (statusGlow === status) {
             return;
@@ -99,7 +99,7 @@
     }
     
     function setGlow1(status) {
-        var glow1 = document.querySelector("#glow1");
+        var glow1 = document.querySelector("#glow1-img");
  
         if (statusGlow1 === status) {
             return;
@@ -114,7 +114,7 @@
     }
 
     function setGlow2(status) {
-        var glow2 = document.querySelector("#glow2");
+        var glow2 = document.querySelector("#glow2-img");
  
         if (statusGlow2 === status) {
             return;
