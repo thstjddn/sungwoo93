@@ -16,9 +16,7 @@
  
 (function() {
     var MAX_G = 10,
-        HEADER_HEIGHT = 50,
         ballRadius = 20,
-        // 여기서부터 수정
         ball1Radius = 20,
         ball2Radius = 20,
         innerRadius = 31.25,
