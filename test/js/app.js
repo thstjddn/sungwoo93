@@ -21,7 +21,7 @@
         // 여기서부터 수정
         ball1Radius = 20,
         ball2Radius = 20,
-        innerRadius = 31.25,
+        innerRadius = outerRadius/4,
         outerRadius,
         outerRadius1,
         outerRadius2,
@@ -227,15 +227,14 @@
      * @private
      */
     function setDefaultVariables() {
-        screenWidth = 250;
-        screenHeight = 250;
-        screenWidth1 = 250;
-        screenHeight1 = 62.5;
-        screenWidth2 = 62.5;
-        screenHeight2 = 250;
+        screenWidth = window.innerWidth * 0.8;
+        screenHeight = window.innerHeight * 0.8;
+        screenWidth1 = window.innerWidth * 0.8;
+        screenHeight1 = window.innerHeight * 0.2;
+        screenWidth2 = window.innerWidth * 0.2;
+        screenHeight2 = window.innerHeight * 0.8;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
-        outerRadius1 = (screenWidth1 > screenHeight1) ? (screenHeight1 / 2) : (screenWidth1 / 2);
-        outerRadius2 = (screenWidth2 > screenHeight2) ? (screenHeight2 / 2) : (screenWidth2 / 2);
+        
 
         centerX = screenWidth / 2;
         centerY = (screenHeight / 2);
@@ -259,8 +258,12 @@
             ball1 = document.querySelector("#ball1"),
             ball2 = document.querySelector("#ball2"),
             outerCircle = document.querySelector("#outer-circle"),
+            outerCircleimg = document.querySelector("#outer-circle img"),
             bartop = document.querySelector("#bartop"),
+            bartopimg = document.querySelector("#bartop img"),
             barleft = document.querySelector("#barleft"),
+            barleftimg = document.querySelector("#barleft img"),
+
             errorMessage = document.querySelector("#error-message");
 
         outerCircle.style.left = centerX - outerRadius + "px";
@@ -268,15 +271,30 @@
         outerCircle.style.width = (outerRadius * 2) + "px";
         outerCircle.style.height = (outerRadius * 2) + "px";
         
-        bartop.style.left = centerX1 - outerRadius1 + "px";
-        bartop.style.top = centerY1 - outerRadius1 + "px";
-        bartop.style.width = screenWidth1 + "px";
-        bartop.style.height = (outerRadius1 * 2) + "px";
+        outerCircleimg.style.left = centerX - outerRadius + "px";
+        outerCircleimg.style.top = centerY - outerRadius + "px";
+        outerCircleimg.style.width = (outerRadius * 2) + "px";
+        outerCircleimg.style.height = (outerRadius * 2) + "px";
+        
+        bartop.style.left = centerX1 - outerRadius + "px";
+        bartop.style.top = centerY1 - outerRadius + "px";
+        bartop.style.width = (outerRadius * 2) + "px";
+        bartop.style.height = ball1Radius * 2 * 1.2 + "px";
+        
+        bartopimg.style.left = centerX1 - outerRadius + "px";
+        bartopimg.style.top = centerY1 - outerRadius + "px";
+        bartopimg.style.width = (outerRadius * 2) + "px";
+        bartopimg.style.height = ball1Radius * 2 * 1.2 + "px";
 
-        barleft.style.left = centerX2 - outerRadius2 + "px";
-        barleft.style.top = centerY2 - outerRadius2 + "px";
-        barleft.style.width = (outerRadius2 * 2) + "px";
-        barleft.style.height = screenHeight2 + "px";
+        barleft.style.left = centerX2 - outerRadius + "px";
+        barleft.style.top = centerY2 - outerRadius + "px";
+        barleft.style.width = ball1Radius * 2 * 1.2 + "px";
+        barleft.style.height = (outerRadius * 2) + "px";
+
+        barleftimg.style.left = centerX2 - outerRadius2 + "px";
+        barleftimg.style.top = centerY2 - outerRadius2 + "px";
+        barleftimg.style.width = ball1Radius * 2 * 1.2 + "px";
+        barleftimg.style.height = (outerRadius * 2) + "px";
 
         ball.style.left = centerX - ballRadius + "px";
         ball.style.top = centerY - ballRadius + "px";
@@ -291,9 +309,9 @@
         ball1.style.display = "block";
         ball2.style.display = "block";
         
-        outerCircle.style.display = "block";
-        bartop.style.display = "block";
-        barleft.style.display = "block";
+        outerCircle.style.display = "inline-block";
+        bartop.style.display = "inline-block";
+        barleft.style.display = "inline-block";
 
         errorMessage.style.display = "none";
     }

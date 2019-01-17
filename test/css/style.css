@@ -67,9 +67,9 @@ body{
 .grid-item {
     position: relative;
     background-color: rgba(0, 0, 0);
-    border: 0 solid rgba(0, 0, 0);
     padding: 0;
     font-size: 15px; 
+    text-align : center;
 }
 
 #outer-circle{
@@ -80,37 +80,46 @@ body{
     margin : 0;
     border: 0;
     padding : 0;
+    vertical-align : middle;
 
 }
 
 #bartop{
-    display : block;
+    display : inline-block;
     margin-right : 0;
     width : 250px;
     height : 62.5px;
     margin : 0;
     border: 0;
     padding : 0;
+    
+    vertical-align : middle;
 }
 
 #bartop img{
     width : 250px;
     height : 62.5px;
+    
+    vertical-align : middle;
 }
 
 #barleft{
-    display : block;
+    display : inline-block;
     margin-right : 0;
     width : 62.5px;
     height : 250px;
     margin : 0;
     border: 0;
     padding : 0;
+    
+    vertical-align : middle;
 }
 
 #barleft img{
     width : 62.5px;
     height : 250px;
+    
+    vertical-align : middle;
 }
 
 #ball, #ball1, #ball2{
