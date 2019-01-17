@@ -21,7 +21,7 @@
         // 여기서부터 수정
         ball1Radius = 20,
         ball2Radius = 20,
-        innerRadius = outerRadius/4,
+        innerRadius = 31.25,
         outerRadius,
         outerRadius1,
         outerRadius2,
