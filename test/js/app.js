@@ -227,11 +227,11 @@
      */
     function setDefaultVariables() {
         screenWidth = window.innerWidth * 0.8;
-        screenHeight = window.innerHeight * 0.7;
+        screenHeight = window.innerHeight * 0.8;
         screenWidth1 = window.innerWidth * 0.8;
         screenHeight1 = window.innerHeight * 0.1;
         screenWidth2 = window.innerWidth * 0.2;
-        screenHeight2 = window.inerHeight * 0.7;
+        screenHeight2 = window.inerHeight * 0.8;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = (screenWidth1 > screenHeight1) ? (screenHeight1 / 2) : (screenWidth1 / 2);
         outerRadius2 = (screenWidth2 > screenHeight2) ? (screenHeight2 / 2) : (screenWidth2 / 2);
