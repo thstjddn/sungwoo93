@@ -275,7 +275,7 @@
         outerCircleimg.style.width = (outerRadius * 2) + "px";
         outerCircleimg.style.height = (outerRadius * 2) + "px";
         
-        bartop.style.left = centerX1 - outerRadius1 + "px";
+        // bartop.style.left = centerX1 - outerRadius1 + "px";
         bartop.style.top = centerY1 - outerRadius1 + "px";
         bartop.style.width = (outerRadius * 2) + "px";
         bartop.style.height = (ballRadius * 2 * 1.2) + "px";
@@ -299,7 +299,7 @@
         ball.style.top = centerY - ballRadius + "px";
 
         ball1.style.left = centerX1 - ball1Radius + "px";
-        ball1.style.top = centerY1 - (ball1Radius * 1.2) + "px";
+        ball1.style.top = ball1Radius * 0.2 + "px";
 
         ball2.style.left = centerX2 - ball2Radius + "px";
         ball2.style.top = centerY2 - ball2Radius + "px";
