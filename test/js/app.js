@@ -259,12 +259,8 @@
             ball1 = document.querySelector("#ball1"),
             ball2 = document.querySelector("#ball2"),
             outerCircle = document.querySelector("#outer-circle"),
-            outerCircleimg = document.querySelector("#outer-circle img"),
             bartop = document.querySelector("#bartop"),
-            bartopimg = document.querySelector("#bartop img"),
             barleft = document.querySelector("#barleft"),
-            barleftimg = document.querySelector("#barleft img"),
-
             errorMessage = document.querySelector("#error-message");
 
         outerCircle.style.left = centerX - outerRadius + "px";
@@ -272,30 +268,15 @@
         outerCircle.style.width = (outerRadius * 2) + "px";
         outerCircle.style.height = (outerRadius * 2) + "px";
         
-        outerCircleimg.style.left = centerX - outerRadius + "px";
-        outerCircleimg.style.top = centerY - outerRadius + "px";
-        outerCircleimg.style.width = (outerRadius * 2) + "px";
-        outerCircleimg.style.height = (outerRadius * 2) + "px";
-        
         bartop.style.left = centerX1 - outerRadius1 + "px";
         bartop.style.top = centerY1 - outerRadius1 + "px";
         bartop.style.width = screenWidth1 + "px";
         bartop.style.height = (outerRadius1 * 2) + "px";
-        
-        bartopimg.style.left = centerX1 - outerRadius1 + "px";
-        bartopimg.style.top = centerY1 - outerRadius1 + "px";
-        bartopimg.style.width = screenWidth1 + "px";
-        bartopimg.style.height = (outerRadius1 * 2) + "px";
 
         barleft.style.left = centerX2 - outerRadius2 + "px";
         barleft.style.top = centerY2 - outerRadius2 + "px";
         barleft.style.width = (outerRadius2 * 2) + "px";
         barleft.style.height = screenHeight2 + "px";
-        
-        barleftimg.style.left = centerX2 - outerRadius2 + "px";
-        barleftimg.style.top = centerY2 - outerRadius2 + "px";
-        barleftimg.style.width = (outerRadius2 * 2) + "px";
-        barleftimg.style.height = screenHeight2 + "px";
 
         ball.style.left = centerX - ballRadius + "px";
         ball.style.top = centerY - ballRadius + "px";
