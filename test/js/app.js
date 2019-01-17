@@ -234,7 +234,8 @@
         screenWidth2 = window.innerWidth * 0.2;
         screenHeight2 = window.innerHeight * 0.8;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
-        
+        outerRadius1 = (screenWidth1 > screenHeight1) ? (screenHeight1 / 2) : (screenWidth1 / 2);
+        outerRadius2 = (screenWidth2 > screenHeight2) ? (screenHeight2 / 2) : (screenWidth2 / 2);
 
         centerX = screenWidth / 2;
         centerY = (screenHeight / 2);
@@ -276,25 +277,25 @@
         outerCircleimg.style.width = (outerRadius * 2) + "px";
         outerCircleimg.style.height = (outerRadius * 2) + "px";
         
-        bartop.style.left = centerX1 - outerRadius + "px";
-        bartop.style.top = centerY1 - outerRadius + "px";
-        bartop.style.width = (outerRadius * 2) + "px";
-        bartop.style.height = ball1Radius * 2 * 1.2 + "px";
+        bartop.style.left = centerX1 - outerRadius1 + "px";
+        bartop.style.top = centerY1 - outerRadius1 + "px";
+        bartop.style.width = screenWidth1 + "px";
+        bartop.style.height = (outerRadius1 * 2) + "px";
         
-        bartopimg.style.left = centerX1 - outerRadius + "px";
-        bartopimg.style.top = centerY1 - outerRadius + "px";
-        bartopimg.style.width = (outerRadius * 2) + "px";
-        bartopimg.style.height = ball1Radius * 2 * 1.2 + "px";
+        bartopimg.style.left = centerX1 - outerRadius1 + "px";
+        bartopimg.style.top = centerY1 - outerRadius1 + "px";
+        bartopimg.style.width = screenWidth1 + "px";
+        bartopimg.style.height = (outerRadius1 * 2) + "px";
 
-        barleft.style.left = centerX2 - outerRadius + "px";
-        barleft.style.top = centerY2 - outerRadius + "px";
-        barleft.style.width = ball1Radius * 2 * 1.2 + "px";
-        barleft.style.height = (outerRadius * 2) + "px";
-
+        barleft.style.left = centerX2 - outerRadius2 + "px";
+        barleft.style.top = centerY2 - outerRadius2 + "px";
+        barleft.style.width = (outerRadius2 * 2) + "px";
+        barleft.style.height = screenHeight2 + "px";
+        
         barleftimg.style.left = centerX2 - outerRadius2 + "px";
         barleftimg.style.top = centerY2 - outerRadius2 + "px";
-        barleftimg.style.width = ball1Radius * 2 * 1.2 + "px";
-        barleftimg.style.height = (outerRadius * 2) + "px";
+        barleftimg.style.width = (outerRadius2 * 2) + "px";
+        barleftimg.style.height = screenHeight2 + "px";
 
         ball.style.left = centerX - ballRadius + "px";
         ball.style.top = centerY - ballRadius + "px";
@@ -309,9 +310,9 @@
         ball1.style.display = "block";
         ball2.style.display = "block";
         
-        outerCircle.style.display = "inline-block";
-        bartop.style.display = "inline-block";
-        barleft.style.display = "inline-block";
+        outerCircle.style.display = "block";
+        bartop.style.display = "block";
+        barleft.style.display = "block";
 
         errorMessage.style.display = "none";
     }
