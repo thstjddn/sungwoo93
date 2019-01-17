@@ -70,7 +70,6 @@ body{
     border: 0 solid rgba(0, 0, 0);
     padding: 0;
     font-size: 15px; 
-    text-align : center;
 }
 
 #outer-circle{
@@ -81,7 +80,6 @@ body{
     margin : 0;
     border: 0;
     padding : 0;
-    vertical-align : middle;
 
 }
 
@@ -93,15 +91,11 @@ body{
     margin : 0;
     border: 0;
     padding : 0;
-    
-    vertical-align : middle;
 }
 
 #bartop img{
     width : 250px;
     height : 62.5px;
-    
-    vertical-align : middle;
 }
 
 #barleft{
@@ -112,7 +106,6 @@ body{
     margin : 0;
     border: 0;
     padding : 0;
-    
 }
 
 #barleft img{
