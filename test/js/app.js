@@ -310,9 +310,9 @@
         ball1.style.display = "block";
         ball2.style.display = "block";
         
-        outerCircle.style.display = "block";
-        bartop.style.display = "block";
-        barleft.style.display = "block";
+        outerCircle.style.display = "inline-block";
+        bartop.style.display = "inline-block";
+        barleft.style.display = "inline-block";
 
         errorMessage.style.display = "none";
     }

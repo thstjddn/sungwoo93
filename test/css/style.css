@@ -70,6 +70,7 @@ body{
     border: 0 solid rgba(0, 0, 0);
     padding: 0;
     font-size: 15px; 
+    text-align : center;
 }
 
 #outer-circle{
@@ -80,17 +81,18 @@ body{
     margin : 0;
     border: 0;
     padding : 0;
-
+    vertical-align : middle;
 }
 
 #bartop{
-    display : block;
+    display : inline-block;
     margin-right : 0;
     width : 250px;
     height : 62.5px;
     margin : 0;
     border: 0;
     padding : 0;
+    vertical-align : middle;
 }
 
 #bartop img{
@@ -99,13 +101,14 @@ body{
 }
 
 #barleft{
-    display : block;
+    display : inline-block;
     margin-right : 0;
     width : 62.5px;
     height : 250px;
     margin : 0;
     border: 0;
     padding : 0;
+    vertical-align : middle;
 }
 
 #barleft img{
