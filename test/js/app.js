@@ -23,11 +23,6 @@ $(document).ready(function(){
 (function() {
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
-        ballRadius = 20,
-        // 여기서부터 수정
-        ball1Radius = 20,
-        ball2Radius = 20,
-        innerRadius = 31.25,
         outerRadius,
         outerRadius1,
         outerRadius2,
@@ -44,6 +39,11 @@ $(document).ready(function(){
         centerX2,
         centerY2,
         mobileos,
+        innerRadius = outerRadius/4,
+        ballRadius = 20,
+        // 여기서부터 수정
+        ball1Radius = 20,
+        ball2Radius = 20,
         statusGlow = false,
         statusGlow1 = false,
         statusGlow2 = false;
@@ -234,11 +234,11 @@ $(document).ready(function(){
      */
     function setDefaultVariables() {
         screenWidth = window.innerWidth * 0.8;
-        screenHeight = window.innerHeight * 0.6;
+        screenHeight = window.innerHeight * 0.7;
         screenWidth1 = window.innerWidth * 0.8;
-        screenHeight1 = window.innerHeight * 0.2;
+        screenHeight1 = window.innerWidth * 0.2;
         screenWidth2 = window.innerWidth * 0.2;
-        screenHeight2 = window.innerHeight * 0.6;
+        screenHeight2 = window.innerHeight * 0.7;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = outerRadius;
         outerRadius2 = outerRadius;
@@ -386,9 +386,3 @@ $(document).ready(function(){
 
     window.onload = init;
 }());
-
-// $(document).ready(function(){
-//     var height1 = window.innerWidth * 0.2,
-//         test = height1+ ' ' + '10%' + ' ' + 'auto';
-//     $('#main-detail').css('grid-template-rows', test)
-// });
