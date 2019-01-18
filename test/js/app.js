@@ -233,27 +233,27 @@ $(document).ready(function(){
      * @private
      */
     function setDefaultVariables() {
-        screenWidth = window.innerWidth * 0.8 * 0.8;
-        screenHeight = window.innerHeight * 0.5 * 0.8;
-        screenWidth1 = window.innerWidth * 0.8 * 0.8;
-        screenHeight1 = window.innerWidth * 0.2 * 0.8;
-        screenWidth2 = window.innerWidth * 0.2 * 0.8;
-        screenHeight2 = window.innerHeight * 0.5 * 0.8;
+        screenWidth = window.innerWidth * 0.8 * 0.9;
+        screenHeight = window.innerHeight * 0.5 * 0.9;
+        screenWidth1 = window.innerWidth * 0.8 * 0.9;
+        screenHeight1 = window.innerWidth * 0.2 * 0.9;
+        screenWidth2 = window.innerWidth * 0.2 * 0.9;
+        screenHeight2 = window.innerHeight * 0.5 * 0.9;
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = outerRadius;
         outerRadius2 = outerRadius;
         innerRadius = outerRadius / 4;
         
-        ballRadius = innerRadius * 0.8;
-        ball1Radius = innerRadius * 0.8;
-        ball2Radius = innerRadius * 0.8;
+        ballRadius = innerRadius * 0.9;
+        ball1Radius = innerRadius * 0.9;
+        ball2Radius = innerRadius * 0.9;
 
-        centerX = screenWidth / 0.8  / 2;
-        centerY = (screenHeight / 0.8 / 2);
-        centerX1 = screenWidth1 / 0.8 / 2;
-        centerX2 = screenWidth2 / 0.8 / 2;
-        centerY1 = screenHeight1 / 0.8 /2 ;
-        centerY2 = screenHeight2 / 0.8 / 2;
+        centerX = screenWidth / 0.9  / 2;
+        centerY = (screenHeight / 0.9 / 2);
+        centerX1 = screenWidth1 / 0.9 / 2;
+        centerX2 = screenWidth2 / 0.9 / 2;
+        centerY1 = screenHeight1 / 0.9 /2 ;
+        centerY2 = screenHeight2 / 0.9 / 2;
         
         if (screenWidth <= 0 || screenHeight <= 0) {
             return false;
@@ -286,24 +286,24 @@ $(document).ready(function(){
             barleftimg = document.querySelector("#barleft img"),
             errorMessage = document.querySelector("#error-message");
 
-        outerCircle.style.left = centerX - outerRadius + "px";
-        outerCircle.style.top = centerY - outerRadius + "px";
+        // outerCircle.style.left = centerX - outerRadius  + "px";
+        // outerCircle.style.top = centerY - outerRadius + "px";
         outerCircle.style.width = (outerRadius * 2) + "px";
         outerCircle.style.height = (outerRadius * 2) + "px";
         
         outerCircleimg.style.width = (outerRadius * 2) + "px";
         outerCircleimg.style.height = (outerRadius * 2) + "px";
 
-        bartop.style.left = centerX1 - innerRadius * 0.8 + "px";
-        bartop.style.top = centerY1 - innerRadius * 0.8  + "px";
+        // bartop.style.left = centerX1 - innerRadius * 0.9 + "px";
+        // bartop.style.top = centerY1 - innerRadius * 0.9  + "px";
         bartop.style.width = outerRadius * 2 + "px";
         bartop.style.height = innerRadius * 2 + "px";
 
         bartopimg.style.width = outerRadius * 2 + "px";
         bartopimg.style.height = innerRadius * 2 + "px";
 
-        barleft.style.left = centerX2 - outerRadius2 + "px";
-        barleft.style.top = innerRadius * 0.8 + "px";
+        // barleft.style.left = centerX2 - outerRadius2 + "px";
+        // barleft.style.top = innerRadius * 0.9 + "px";
         barleft.style.width = innerRadius * 2 + "px";
         barleft.style.height = outerRadius * 2 + "px";
         
