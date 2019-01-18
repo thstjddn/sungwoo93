@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 $(document).ready(function(){
     var height1 = window.innerWidth * 0.2,
         test = height1 + "px" + ' ' + '50%' + ' ' + 'auto';
@@ -22,10 +22,7 @@ $(document).ready(function(){
 
 (function() {
     var MAX_G = 10,
-        HEADER_HEIGHT = 50,
         outerRadius,
-        outerRadius1,
-        outerRadius2,
         screenWidth,
         screenWidth1,
         screenWidth2,
@@ -40,10 +37,6 @@ $(document).ready(function(){
         centerY2,
         mobileos,
         innerRadius,
-        ballRadius,
-        // 여기서부터 수정
-        ball1Radius,
-        ball2Radius,
         statusGlow = false,
         statusGlow1 = false,
         statusGlow2 = false;
@@ -286,24 +279,18 @@ $(document).ready(function(){
             barleftimg = document.querySelector("#barleft img"),
             errorMessage = document.querySelector("#error-message");
 
-        // outerCircle.style.left = centerX - outerRadius  + "px";
-        // outerCircle.style.top = centerY - outerRadius + "px";
         outerCircle.style.width = (outerRadius * 2) + "px";
         outerCircle.style.height = (outerRadius * 2) + "px";
         
         outerCircleimg.style.width = (outerRadius * 2) + "px";
         outerCircleimg.style.height = (outerRadius * 2) + "px";
 
-        // bartop.style.left = centerX1 - innerRadius * 0.9 + "px";
-        // bartop.style.top = centerY1 - innerRadius * 0.9  + "px";
         bartop.style.width = outerRadius * 2 + "px";
         bartop.style.height = innerRadius * 2 + "px";
 
         bartopimg.style.width = outerRadius * 2 + "px";
         bartopimg.style.height = innerRadius * 2 + "px";
 
-        // barleft.style.left = centerX2 - outerRadius2 + "px";
-        // barleft.style.top = innerRadius * 0.9 + "px";
         barleft.style.width = innerRadius * 2 + "px";
         barleft.style.height = outerRadius * 2 + "px";
         
@@ -400,8 +387,6 @@ $(document).ready(function(){
             setError("DeviceMotion Events API is not supported.");
         }
         mobileos = getMobileOperatingSystem();
-        console.log(mobileos);
-
     }
     
     function getMobileOperatingSystem() {
