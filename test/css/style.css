@@ -59,7 +59,7 @@ body{
     height: 100%;
     width: 100%;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: auto auto auto;
     background-color: rgb(0, 0, 0);
     color : rgb(255, 255, 255);
     padding: 0;

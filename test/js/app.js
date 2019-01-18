@@ -14,6 +14,12 @@
  * limitations under the License.
  */
  
+$(document).ready(function(){
+    var height1 = window.innerWidth * 0.2,
+        test = height1 + "px" + ' ' + '70%' + ' ' + 'auto';
+    $('#main-detail').css('grid-template-rows', test)
+});
+
 (function() {
     var MAX_G = 10,
         HEADER_HEIGHT = 50,
@@ -38,8 +44,8 @@
         centerX2,
         centerY2,
         mobileos,
-        statusGlow = false;
-        statusGlow1 = false;
+        statusGlow = false,
+        statusGlow1 = false,
         statusGlow2 = false;
 
         
@@ -236,7 +242,7 @@
         outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
         outerRadius1 = outerRadius;
         outerRadius2 = outerRadius;
-
+        
         centerX = screenWidth / 2;
         centerY = (screenHeight / 2);
         centerX1 = screenWidth1 / 2;
@@ -265,8 +271,8 @@
             barleft = document.querySelector("#barleft"),
             barleftimg = document.querySelector("#barleft img"),
             errorMessage = document.querySelector("#error-message");
-        alert(window.innerwidth*0.2)
-        outerCircle.style.left = centerX - outerRadius + "px";
+
+            outerCircle.style.left = centerX - outerRadius + "px";
         outerCircle.style.top = centerY - outerRadius + "px";
         outerCircle.style.width = (outerRadius * 2) + "px";
         outerCircle.style.height = (outerRadius * 2) + "px";
@@ -381,3 +387,8 @@
     window.onload = init;
 }());
 
+// $(document).ready(function(){
+//     var height1 = window.innerWidth * 0.2,
+//         test = height1+ ' ' + '10%' + ' ' + 'auto';
+//     $('#main-detail').css('grid-template-rows', test)
+// });
