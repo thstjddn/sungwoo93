@@ -10,11 +10,11 @@ function handleOrientation(event) {
     
     if(x > 90){
       x = 90;
-      y = -y;
+      y = 180-y;
     };
     if(x < -90){
        x = -90;
-       y = -y;
+       y = 180-y;
     };
 
     if(y < -90){
