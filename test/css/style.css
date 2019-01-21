@@ -150,16 +150,9 @@ body{
     display : inline;
 }
 
-#output {
+#output, #output1,#output2 {
     color:rgb(255, 255, 255);
     font-size: 15px; 
-    margin : 0;
-    padding : 0;
-}
-
-#output1 {
-    color:rgb(255, 255, 255);
-    font-size: 1.5px; 
     margin : 0;
     padding : 0;
 }
