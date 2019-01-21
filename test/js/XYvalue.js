@@ -26,14 +26,14 @@ function handleOrientation(event) {
       x = -x;
     };
 
-    if (z < 30 || z>350) {
-      y = -180 - y;
-    }
+    // if (z < 30 || z>350) {
+    //   y = -180 - y;
+    // }
 
     
     output.innerHTML  = "X :" + x.toFixed(1) + "\n";
     output1.innerHTML  = "Y :" + y.toFixed(1) + "\n";
-    output2.innerHTML = "Z :" + z + "\n";
+    // output2.innerHTML = "Z :" + z + "\n";
 
     // Because we don't want to have the device upside down
     // We constrain the x value to the range [-90,90]
