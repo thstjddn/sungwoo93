@@ -302,17 +302,17 @@ $(document).ready(function(){
         barleftimg.style.width = innerRadius * 2 + "px";
         barleftimg.style.height = outerRadius * 2 + "px";
         
-        circle1.style.width = innerRadius * 2 + "px";
-        circle1.style.height = innerRadius * 2 + "px";
+        circle1.style.width = innerRadius * 1.95 + "px";
+        circle1.style.height = innerRadius * 1.95 + "px";
 
-        circle1img.style.width = innerRadius * 2 + "px";
-        circle1img.style.height = innerRadius * 2 + "px";
+        circle1img.style.width = innerRadius * 1.95 + "px";
+        circle1img.style.height = innerRadius * 1.95 + "px";
 
-        circle2.style.width = innerRadius * 2 + "px";
-        circle2.style.height = innerRadius * 2 + "px";
+        circle2.style.width = innerRadius * 1.95 + "px";
+        circle2.style.height = innerRadius * 1.95 + "px";
 
-        circle2img.style.width = innerRadius * 2 + "px";
-        circle2img.style.height = innerRadius * 2 + "px";
+        circle2img.style.width = innerRadius * 1.95 + "px";
+        circle2img.style.height = innerRadius * 1.95 + "px";
 
         ball.style.left = centerX - innerRadius * 0.8 + "px";
         ball.style.top = centerY - innerRadius * 0.8 + "px";

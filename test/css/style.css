@@ -106,8 +106,9 @@ body{
 
 #circle1 img, #circle2 img{
     position : relative;
-    top :-3px;
+    top : -3.75px;
 }
+
 #ball, #ball1, #ball2{
     position:absolute;
     display:block;
