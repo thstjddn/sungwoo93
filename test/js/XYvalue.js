@@ -8,7 +8,7 @@ var output2 = document.querySelector('.output2');
 function handleOrientation(event) {
     var x = -(event.gamma);  // In degree in the range [-180,180]
     var y = event.beta; // In degree in the range [-90,90]
-    var z = event.absolute;
+    var z = event.bubbles;
 
     if(x > 90){
       x = 90;
