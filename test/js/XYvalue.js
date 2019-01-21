@@ -3,7 +3,7 @@ window.addEventListener("deviceorientation", handleOrientation, true);
 
 var output = document.querySelector('.output');
 var output1 = document.querySelector('.output1');
-var output2 = document.querySelector('#output2');
+var output2 = document.querySelector('.output2');
 
 function handleOrientation(event) {
     var x = -(event.gamma);  // In degree in the range [-180,180]
