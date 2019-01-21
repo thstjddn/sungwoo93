@@ -24,7 +24,7 @@ function handleOrientation(event) {
     if (y > 90){
       x = -x;
     };
-    alert(z);
+    
     output.innerHTML  = "X :" + x.toFixed(1) + "\n";
     output1.innerHTML  = "Y :" + y.toFixed(1) + "\n";
     output2.innerHTML = "Z :" + z + "\n";
