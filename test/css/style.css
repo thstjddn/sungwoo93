@@ -76,6 +76,7 @@ body{
     position : relative;
     top : 50%;
     transform : translateY(-50%);
+    text-align : center;
 }
 
 #barleft{
@@ -88,8 +89,25 @@ body{
     position : relative;
     top : 50%;
     transform : translateY(-50%);
+    text-align : center;
 }
 
+#circle1, #circle2{
+    display : inline-block;
+    margin-right : 0;
+    margin : 0;
+    border: 0;
+    padding : 0;
+    vertical-align : middle;
+    position : relative;
+    top : -50%;
+    transform : translateY(-50%);
+}
+
+#circle1 img, #circle2 img{
+    position : relative;
+    top :-3px;
+}
 #ball, #ball1, #ball2{
     position:absolute;
     display:block;

@@ -277,6 +277,11 @@ $(document).ready(function(){
             bartopimg = document.querySelector("#bartop img"),
             barleft = document.querySelector("#barleft"),
             barleftimg = document.querySelector("#barleft img"),
+
+            circle1 = document.querySelector("#circle1"),
+            circle1img = document.querySelector("#circle1 img"),
+            circle2 = document.querySelector("#circle2"),
+            circle2img = document.querySelector("#circle2 img"),
             errorMessage = document.querySelector("#error-message");
 
         outerCircle.style.width = (outerRadius * 2) + "px";
@@ -293,9 +298,21 @@ $(document).ready(function(){
 
         barleft.style.width = innerRadius * 2 + "px";
         barleft.style.height = outerRadius * 2 + "px";
-        
+    
         barleftimg.style.width = innerRadius * 2 + "px";
         barleftimg.style.height = outerRadius * 2 + "px";
+        
+        circle1.style.width = innerRadius * 2 + "px";
+        circle1.style.height = innerRadius * 2 + "px";
+
+        circle1img.style.width = innerRadius * 2 + "px";
+        circle1img.style.height = innerRadius * 2 + "px";
+
+        circle2.style.width = innerRadius * 2 + "px";
+        circle2.style.height = innerRadius * 2 + "px";
+
+        circle2img.style.width = innerRadius * 2 + "px";
+        circle2img.style.height = innerRadius * 2 + "px";
 
         ball.style.left = centerX - innerRadius * 0.8 + "px";
         ball.style.top = centerY - innerRadius * 0.8 + "px";
@@ -346,7 +363,7 @@ $(document).ready(function(){
         outerCircle.style.display = "inline-block";
         bartop.style.display = "inline-block";
         barleft.style.display = "inline-block";
-
+        circle2.style.display = "inline-block";
         errorMessage.style.display = "none";
     }
  
@@ -388,7 +405,7 @@ $(document).ready(function(){
         }
         mobileos = getMobileOperatingSystem();
     }
-    
+    // iOS와 android의 센서 동작 인식이 다르기 때문에 모바일 운영체제를 선택하는 함수
     function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     
