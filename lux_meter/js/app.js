@@ -1,10 +1,15 @@
-if ( 'AmbientLightSensor' in window ) {
-    const sensor = new AmbientLightSensor();
-    sensor.onreading = () => {
-      console.log('Current light level:', sensor.illuminance);
-    };
-    sensor.onerror = (event) => {
-      console.log(event.error.name, event.error.message);
-    };
-    sensor.start();
-  }
+window.addEventListener("devicelight", function (event) {
+    // Getting lux
+    var luminosity = event.value;
+    alert(luminosity);
+});
+
+window.addEventListener('devicelight', function(event) {
+    var bodyBg= document.body.style;
+    if (event.value < 100) {
+          alert('Hey, you! You are working in the Dim environment');
+          bodyBg.backgroundColor="lightgrey";
+    } else {
+          bodyBg.backgroundColor="#fff";
+    }
+});
