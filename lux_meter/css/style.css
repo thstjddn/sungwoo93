@@ -4,6 +4,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color : rgb(0,0,0);
 }
 .output{
     color:rgb(0, 0, 0);
