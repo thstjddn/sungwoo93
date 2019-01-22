@@ -1,19 +1,3 @@
-/*
- * Copyright (c) 2015 Samsung Electronics Co., Ltd. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 $(document).ready(function(){
     var height1 = window.innerWidth * 0.2,
         test = height1 + "px" + ' ' + '50%' + ' ' + 'auto';
@@ -77,11 +61,6 @@ $(document).ready(function(){
         return elm;
     }
  
-    /**
-     * Updates the glow status
-     * @private
-     * @param {boolean} status - The requested status of the glow
-     */
     function setGlow(status) {
         var glow = document.querySelector("#glow");
  
@@ -126,13 +105,7 @@ $(document).ready(function(){
         }
         statusGlow2 = status;
     }
-    /**
-     * Handles the devicemotion event.
-     * As a result, changes the position of ball element and
-     * if the position is inside of inner circle, set the ball to glow.
-     * @private
-     * @param {Object} dataEvent - The event object
-     */
+    
     function onOrientationChange(dataEvent) {
         var noGravitation,
             xDiff,
@@ -204,13 +177,6 @@ $(document).ready(function(){
     }
           
 
-
-
-    /**
-     * Handles the hardware key event.
-     * @private
-     * @param {Object} event - The hardware key event object
-     */
     function keyEventHandler(event) {
         if (event.keyName === "back") {
             try {
@@ -221,10 +187,6 @@ $(document).ready(function(){
         }
     }
  
-    /**
-     * Sets the default value to the variables and application environment.
-     * @private
-     */
     function setDefaultVariables() {
         screenWidth = window.innerWidth * 0.8 * 0.9;
         screenHeight = window.innerHeight * 0.5 * 0.9;
@@ -254,10 +216,7 @@ $(document).ready(function(){
         return true;
     
     }
-    /**
-     * Sets the default position and style of elements.
-     * @private
-     */
+
     function setDefaultViews() {
         var ball = document.querySelector("#ball"),
             ballimg = document.querySelector("#ball img"),
@@ -367,10 +326,6 @@ $(document).ready(function(){
         errorMessage.style.display = "none";
     }
  
-    /**
-     * Sets the default event handlers to the events.
-     * @private
-     */
     function setDefaultEvents() {
         document.addEventListener("tizenhwkey", keyEventHandler);
  
@@ -383,20 +338,12 @@ $(document).ready(function(){
         return true;
     }
     
-    /**
-     * Sets the error message to the error display element.
-     * @private
-     */
     function setError(text) {
         var errorMessage = emptyElement(document.querySelector("#error-message"));
  
         errorMessage.appendChild(document.createTextNode(text));
     }
  
-    /**
-     * Initializes the application.
-     * @private
-     */
     function init() {
         if (setDefaultEvents() && setDefaultVariables()) {
             setDefaultViews();
@@ -409,7 +356,6 @@ $(document).ready(function(){
     function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     
-            // Windows Phone must come first because its UA also contains "Android"
         if (/windows phone/i.test(userAgent)) {
             return "Windows Phone";
         }
@@ -418,7 +364,6 @@ $(document).ready(function(){
             return "Android";
         }
     
-        // iOS detection from: http://stackoverflow.com/a/9039885/177710
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             return "iOS";
         }
