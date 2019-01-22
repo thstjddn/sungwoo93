@@ -8,4 +8,9 @@ function handleOrientation(event){
     output.innerHTML = "LX : " + luminosity + "\n";
 };
 
+function init(){
+    handleOrientation(event);
+}
 window.addEventListener('devicelight', handleOrientation);
+
+window.onload = init;
