@@ -138,7 +138,6 @@ body{
 
 #error-message {
     text-align: center;
-    display:none;
     color: rgba(255, 255, 255, 1);
 }
 
