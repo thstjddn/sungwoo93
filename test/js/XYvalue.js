@@ -1,3 +1,5 @@
+
+//x, y의 각도 계산 및 출력하는 js
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 

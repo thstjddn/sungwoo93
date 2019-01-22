@@ -1,40 +1,33 @@
+// jQuery로 모바일로 출력되는 화면에 맞춰서 전체 화면의 비율을 정함
 $(document).ready(function(){
     var height1 = window.innerWidth * 0.2,
         test = height1 + "px" + ' ' + '50%' + ' ' + 'auto';
     $('#main-detail').css('grid-template-rows', test)
 });
 
+// 기본 변수 설정
 (function() {
-    var MAX_G = 10,
-        outerRadius,
-        screenWidth,
-        screenWidth1,
-        screenWidth2,
-        screenHeight,
-        screenHeight1,
-        screenHeight2,
-        centerX,
-        centerY,
-        centerX1,
-        centerY1,
-        centerX2,
-        centerY2,
-        mobileos,
-        innerRadius,
+    var MAX_G = 10, /** 중력 */
+        outerRadius, /** 큰 원의 반지름 */
+        screenWidth, /** 원이 포함된 화면의 너비*/
+        screenWidth1, /** 상단 화면의 너비*/
+        screenWidth2, /** 좌측 화면의 너비*/
+        screenHeight, /** 원이 포함된 화면의 높이 */
+        screenHeight1, /** 상단 화면의 높이 */
+        screenHeight2, /** 좌측 화면의 높이 */
+        centerX, /** 우측 하단의 가로 중앙 */
+        centerY, /** 우측 하단의 세로 중앙 */
+        centerX1, /** 상단의 가로 중앙 */
+        centerY1, /** 상단의 세로 중앙*/
+        centerX2, // 좌측의 가로 중앙
+        centerY2, // 좌측의 세로 중앙
+        mobileos, // 모바일 os가 무엇인지를 받아오는 변수
+        innerRadius, //안의 작은 원의 반지름
         statusGlow = false,
         statusGlow1 = false,
         statusGlow2 = false;
 
-        
-        // 변수 추가 생성
-
-    /**
-     * Checks the (x, y) is in the circle with radius r.
-     * @private
-     * @param {number} x - x coordinate value
-     * @param {number} y - y coordinate value
-     * @param {number} r - radius value
-     */
+    // 일정 범위 안에(가운데 작은 원)에 공이 들어오면 빛나게 해주는 기능에서 일정 범위를 화면 크기에 맞게 설정하는 함수
     function inCircleRange(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
@@ -47,12 +40,6 @@ $(document).ready(function(){
     }
     
  
-    /**
-     * Removes all child of the element.
-     * @private
-     * @param {Object} elm - The object to be emptied
-     * @return {Object} The emptied element
-     */
     function emptyElement(elm) {
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
@@ -60,7 +47,8 @@ $(document).ready(function(){
  
         return elm;
     }
- 
+    
+    // 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
     function setGlow(status) {
         var glow = document.querySelector("#glow");
  
@@ -106,6 +94,7 @@ $(document).ready(function(){
         statusGlow2 = status;
     }
     
+    //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
     function onOrientationChange(dataEvent) {
         var noGravitation,
             xDiff,
@@ -119,8 +108,6 @@ $(document).ready(function(){
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
         
-        
-        
         xDiff = dataEvent.x - noGravitation.x;
         if (Math.abs(xDiff) > MAX_G) {
             xDiff = xDiff / Math.abs(xDiff) * MAX_G;
@@ -133,6 +120,7 @@ $(document).ready(function(){
         xPos = (outerRadius - innerRadius * 0.8) * xDiff / MAX_G;
         yPos = (outerRadius - innerRadius * 0.8) * yDiff / MAX_G;
         
+        // ios는 android와 움직임 인식하는 방식이 달라서 기존 어플들과의 통일성을 위해 기기가 ios라면 움직임을 변경해줌
         if (mobileos === "iOS"){
             ball.style.left = centerX - innerRadius * 0.8 - xPos + "px";
             ball.style.top = centerY - innerRadius * 0.8 - yPos + "px";
@@ -176,7 +164,7 @@ $(document).ready(function(){
         }
     }
           
-
+    // 뒤로가기 버튼을 누르면 동작을 멈춤
     function keyEventHandler(event) {
         if (event.keyName === "back") {
             try {
@@ -186,7 +174,8 @@ $(document).ready(function(){
             }
         }
     }
- 
+    // 기본값 설정(각 기기마다 상이한 화면의 크기 설정)
+
     function setDefaultVariables() {
         screenWidth = window.innerWidth * 0.8 * 0.9;
         screenHeight = window.innerHeight * 0.5 * 0.9;
@@ -216,7 +205,7 @@ $(document).ready(function(){
         return true;
     
     }
-
+    // 위의 화면 크기에 따른 각각 요소들의 크기와 위치 설정
     function setDefaultViews() {
         var ball = document.querySelector("#ball"),
             ballimg = document.querySelector("#ball img"),
@@ -338,6 +327,7 @@ $(document).ready(function(){
         return true;
     }
     
+    // 오류가 있다면 에러메세지 출력하는 함수
     function setError(text) {
         var errorMessage = emptyElement(document.querySelector("#error-message"));
  
