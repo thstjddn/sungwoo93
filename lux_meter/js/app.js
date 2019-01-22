@@ -1,9 +1,9 @@
-window.addEventListener("DeviceLightEvent", Light, true);
+window.addEventListener("DeviceLightEvent", light, true);
 
 var output = document.querySelector(".output");
 
-function(DeviceLightEvent){
-    var Light = DeviceLightEvent.value;
+function light(event){
+    var luxmeter = event.value;
     
-    output.innerHTML = "밝기 : " + Light + "\n";
+    output.innerHTML = "밝기 : " + luxmeter + "\n";
 }
