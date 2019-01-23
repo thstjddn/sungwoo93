@@ -3,9 +3,8 @@
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 
-var output = document.querySelector('.output');
-var output1 = document.querySelector('.output1');
-var output2 = document.querySelector('.output2');
+var outputx = document.querySelector('.output_x');
+var outputy = document.querySelector('.output_y');
 
 function handleOrientation(event) {
     var x = -(event.gamma); 
@@ -28,8 +27,8 @@ function handleOrientation(event) {
     };
 
     
-    output.innerHTML  = "X :" + x.toFixed(1) + "\n";
-    output1.innerHTML  = "Y :" + y.toFixed(1) + "\n";
+    outputx.innerHTML  = "X :" + x.toFixed(1) + "\n";
+    outputy.innerHTML  = "Y :" + y.toFixed(1) + "\n";
 }
 
 window.addEventListener('deviceorientation', handleOrientation);

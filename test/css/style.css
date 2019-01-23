@@ -85,7 +85,7 @@ body {
     text-align : center;
 }
 
-#circle1, #circle2{
+#circle_x, #circle_y{
     display : inline-block;
     margin-right : 0;
     margin : 0;
@@ -97,29 +97,29 @@ body {
     transform : translateY(-50%);
 }
 
-#circle1 img, #circle2 img{
+#circle_x img, #circle_y img{
     position : relative;
     top : -3.75px;
 }
 
-#ball, #ball1, #ball2{
+#ball_main, #ball_x, #ball_y{
     position:absolute;
     display:block;
 }
 
-#glow, #glow1, #glow2{
+#glow_main, #glow_x, #glow_y{
     position:absolute;
     display:block;
 }
 
-#ball img, #ball1 img, #ball2 img{
+#ball_main img, #ball_x img, #ball_y img{
     position:absolute;
     top : 0;
     left:0;
     display:block;
 }
 
-#glow img, #glow1 img, #glow2 img{
+#glow_main img, #glow_x img, #glow_y img{
     position:absolute;
     display:block;
 }
@@ -134,15 +134,7 @@ body {
     color: rgba(255, 255, 255, 1);
 }
 
-.text-value{
-    color:rgb(255, 255, 255);
-    font-size: 1.5em; 
-    margin : 0;
-    padding : 0;
-    display : inline;
-}
-
-.output, .output1,.output2 {
+.output_x, .output_y{
     color:rgb(255, 255, 255);
     font-size: 15px; 
     margin : 0;
