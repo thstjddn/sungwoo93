@@ -230,12 +230,10 @@
     function inCircleRange_x(x, r) {
         return(x * x <= r * r) ? true : false;
     }
-
     function inCircleRange_y(y, r) {
         return ( y * y <= r * r) ? true : false;
     }
     
- 
     function emptyElement(elm) {
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
@@ -258,14 +256,12 @@
         }
         statusGlow_main = status;
     }
-    
     function setGlowx(status) {
         var glow_x = document.querySelector("#glow_x");
  
         if (statusGlow_x === status) {
             return;
         }
- 
         if (status === true) {
             glow_x.style.display = "block";
         } else {
@@ -273,14 +269,12 @@
         }
         statusGlow_x = status;
     }
-
     function setGlowy(status) {
         var glow_y = document.querySelector("#glow_y");
  
         if (statusGlow_y === status) {
             return;
         }
- 
         if (status === true) {
             glow_y.style.display = "block";
         } else {
@@ -288,7 +282,7 @@
         }
         statusGlow_y = status;
     }
-    
+
     //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
     function onOrientationChange(dataEvent) {
         var noGravitation,
@@ -359,6 +353,4 @@
         }
     }
 
- 
-    
 }());
