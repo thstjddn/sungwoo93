@@ -1,28 +1,25 @@
-const details = document.getElementById("#details");
+if("ondevicelight" in window) 
+{
+   // API supported.
+   window.addEventListener("devicelight", function(event) {
+        //light level is returned in lux unit.
+        console.log("The current level of ambient light is " + event.value + " lux");
+    });
+} 
+else 
+{
+   // API not supported
+   console.log("API not supported");
+}
 
-// Feature detection
-if (window.AmbientLightSensor){
-    try{
-      const sensor = new AmbientLightSensor();
-      // Detect changes in the light
-      sensor.onreading = () => {
-        details.innerHTML = sensor.illuminance;
-
-          // Read the light levels in lux 
-          // < 50 is dark room
-          if (sensor.illuminance < 50) {
-            document.body.className = 'darkLight';
-          } else {
-            document.body.className = 'brightLight';
-          }
-      }
-
-      // Has an error occured?
-      sensor.onerror = event => document.getElementById("details").innerHTML = event.error.message;
-      sensor.start();
-    } catch(err) {
-      details.innerHTML = err.message;
-    }
-} else {
-  details.innerHTML = 'It looks like your browser doesnt support this feature'; 
+if("onlightlevel" in window)
+{
+    window.addEventListener("lightlevel", function(event) {
+        //light value can be dim,normal or bright
+        console.log("The type of ambient light available is " + event.value);
+    });
+}
+else
+{
+    console.log("API not supported");
 }

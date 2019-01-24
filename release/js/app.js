@@ -1,41 +1,41 @@
 // jQuery로 모바일로 출력되는 화면에 맞춰서 전체 화면의 비율을 정함
 $(document).ready(function(){
-    var height1 = window.innerWidth * 0.2,
-        test = height1 + "px" + ' ' + '50%' + ' ' + 'auto';
-    $('#main-detail').css('grid-template-rows', test)
+    var height_top = window.innerWidth * 0.2,
+        grid_height = height_top + "px" + ' ' + '50%' + ' ' + 'auto';
+    $('#main-detail').css('grid-template-rows', grid_height)
 });
 
 // 기본 변수 설정
 (function() {
     var MAX_G = 10, /** 중력 */
         outerRadius, /** 큰 원의 반지름 */
-        screenWidth, /** 원이 포함된 화면의 너비*/
-        screenWidth1, /** 상단 화면의 너비*/
-        screenWidth2, /** 좌측 화면의 너비*/
-        screenHeight, /** 원이 포함된 화면의 높이 */
-        screenHeight1, /** 상단 화면의 높이 */
-        screenHeight2, /** 좌측 화면의 높이 */
-        centerX, /** 우측 하단의 가로 중앙 */
-        centerY, /** 우측 하단의 세로 중앙 */
-        centerX1, /** 상단의 가로 중앙 */
-        centerY1, /** 상단의 세로 중앙*/
-        centerX2, // 좌측의 가로 중앙
-        centerY2, // 좌측의 세로 중앙
+        screenWidth_main, /** 원이 포함된 화면의 너비*/
+        screenWidth_x, /** 상단 화면의 너비*/
+        screenWidth_y, /** 좌측 화면의 너비*/
+        screenHeight_main, /** 원이 포함된 화면의 높이 */
+        screenHeight_x, /** 상단 화면의 높이 */
+        screenHeight_y, /** 좌측 화면의 높이 */
+        centerX_main, /** 우측 하단의 가로 중앙 */
+        centerY_main, /** 우측 하단의 세로 중앙 */
+        centerX_x, /** 상단의 가로 중앙 */
+        centerY_x, /** 상단의 세로 중앙*/
+        centerX_y, // 좌측의 가로 중앙
+        centerY_y, // 좌측의 세로 중앙
         mobileos, // 모바일 os가 무엇인지를 받아오는 변수
-        innerRadius, //안의 작은 원의 반지름
-        statusGlow = false,
-        statusGlow1 = false,
-        statusGlow2 = false;
+        innerRadius, //이동하는 원의 반지름
+        statusGlow_main = false,
+        statusGlow_x = false,
+        statusGlow_y = false;
 
     // 일정 범위 안에(가운데 작은 원)에 공이 들어오면 빛나게 해주는 기능에서 일정 범위를 화면 크기에 맞게 설정하는 함수
-    function inCircleRange(x, y, r) {
+    function inCircleRange_main(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
-    function inCircleRange1(x, r) {
+    function inCircleRange_x(x, r) {
         return(x * x <= r * r) ? true : false;
     }
 
-    function inCircleRange2(y, r) {
+    function inCircleRange_y(y, r) {
         return ( y * y <= r * r) ? true : false;
     }
     
@@ -50,48 +50,48 @@ $(document).ready(function(){
     
     // 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
     function setGlow(status) {
-        var glow = document.querySelector("#glow");
+        var glow_main = document.querySelector("#glow_main");
  
-        if (statusGlow === status) {
+        if (statusGlow_main === status) {
             return;
         }
  
         if (status === true) {
-            glow.style.display = "block";
+            glow_main.style.display = "block";
         } else {
-            glow.style.display = "none";
+            glow_main.style.display = "none";
         }
-        statusGlow = status;
+        statusGlow_main = status;
     }
     
-    function setGlow1(status) {
-        var glow1 = document.querySelector("#glow1");
+    function setGlowx(status) {
+        var glow_x = document.querySelector("#glow_x");
  
-        if (statusGlow1 === status) {
+        if (statusGlow_x === status) {
             return;
         }
  
         if (status === true) {
-            glow1.style.display = "block";
+            glow_x.style.display = "block";
         } else {
-            glow1.style.display = "none";
+            glow_x.style.display = "none";
         }
-        statusGlow1 = status;
+        statusGlow_x = status;
     }
 
-    function setGlow2(status) {
-        var glow2 = document.querySelector("#glow2");
+    function setGlowy(status) {
+        var glow_y = document.querySelector("#glow_y");
  
-        if (statusGlow2 === status) {
+        if (statusGlow_y === status) {
             return;
         }
  
         if (status === true) {
-            glow2.style.display = "block";
+            glow_y.style.display = "block";
         } else {
-            glow2.style.display = "none";
+            glow_y.style.display = "none";
         }
-        statusGlow2 = status;
+        statusGlow_y = status;
     }
     
     //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
@@ -101,9 +101,9 @@ $(document).ready(function(){
             yDiff,
             xPos,
             yPos,
-            ball = document.querySelector("#ball");
-            ball1 = document.querySelector("#ball1");
-            ball2 = document.querySelector("#ball2");
+            ball_main = document.querySelector("#ball_main");
+            ball_x = document.querySelector("#ball_x");
+            ball_y = document.querySelector("#ball_y");
  
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
@@ -122,44 +122,44 @@ $(document).ready(function(){
         
         // ios는 android와 움직임 인식하는 방식이 달라서 기존 어플들과의 통일성을 위해 기기가 ios라면 움직임을 변경해줌
         if (mobileos === "iOS"){
-            ball.style.left = centerX - innerRadius * 0.8 - xPos + "px";
-            ball.style.top = centerY - innerRadius * 0.8 - yPos + "px";
-            ball1.style.left = centerX - innerRadius * 0.8 - xPos + "px";
-            ball2.style.top = centerY- innerRadius * 0.8 - yPos + "px";
+            ball_main.style.left = centerX_main - innerRadius * 0.8 - xPos + "px";
+            ball_main.style.top = centerY_main - innerRadius * 0.8 - yPos + "px";
+            ball_x.style.left = centerX_main - innerRadius * 0.8 - xPos + "px";
+            ball_y.style.top = centerY_main- innerRadius * 0.8 - yPos + "px";
         }else{
-            ball.style.left = centerX - innerRadius * 0.8 + xPos + "px";
-            ball.style.top = centerY - innerRadius * 0.8 + yPos + "px";
-            ball1.style.left = centerX - innerRadius * 0.8 + xPos + "px";
-            ball2.style.top = centerY- innerRadius * 0.8 + yPos + "px";
+            ball_main.style.left = centerX_main - innerRadius * 0.8 + xPos + "px";
+            ball_main.style.top = centerY_main - innerRadius * 0.8 + yPos + "px";
+            ball_x.style.left = centerX_main - innerRadius * 0.8 + xPos + "px";
+            ball_y.style.top = centerY_main - innerRadius * 0.8 + yPos + "px";
         }
 
-        if (inCircleRange(xPos, yPos, innerRadius - innerRadius * 0.8)) {
-            if (statusGlow === false) {
+        if (inCircleRange_main(xPos, yPos, innerRadius - innerRadius * 0.8)) {
+            if (statusGlow_main === false) {
                 setGlow(true);
             }
         } else {
-            if (statusGlow === true) {
+            if (statusGlow_main === true) {
                 setGlow(false);
             }
         }
 
-        if (inCircleRange1(xPos,  innerRadius - innerRadius * 0.8)) {
-            if (statusGlow1 === false) {
-                setGlow1(true);
+        if (inCircleRange_x(xPos,  innerRadius - innerRadius * 0.8)) {
+            if (statusGlow_x === false) {
+                setGlowx(true);
             }
         } else {
-            if (statusGlow1 === true) {
-                setGlow1(false);
+            if (statusGlow_x === true) {
+                setGlowx(false);
             }
         }
 
-        if (inCircleRange2(yPos, innerRadius - innerRadius * 0.8)) {
-            if (statusGlow2 === false) {
-                setGlow2(true);
+        if (inCircleRange_y(yPos, innerRadius - innerRadius * 0.8)) {
+            if (statusGlow_y === false) {
+                setGlowy(true);
             }
         } else {
-            if (statusGlow2 === true) {
-                setGlow2(false);
+            if (statusGlow_y === true) {
+                setGlowy(false);
             }
         }
     }
@@ -177,29 +177,27 @@ $(document).ready(function(){
     // 기본값 설정(각 기기마다 상이한 화면의 크기 설정)
 
     function setDefaultVariables() {
-        screenWidth = window.innerWidth * 0.8 * 0.9;
-        screenHeight = window.innerHeight * 0.5 * 0.9;
-        screenWidth1 = window.innerWidth * 0.8 * 0.9;
-        screenHeight1 = window.innerWidth * 0.2 * 0.9;
-        screenWidth2 = window.innerWidth * 0.2 * 0.9;
-        screenHeight2 = window.innerHeight * 0.5 * 0.9;
-        outerRadius = (screenWidth > screenHeight) ? (screenHeight / 2) : (screenWidth / 2);
-        outerRadius1 = outerRadius;
-        outerRadius2 = outerRadius;
+        screenWidth_main = window.innerWidth * 0.8 * 0.9;
+        screenHeight_main = window.innerHeight * 0.5 * 0.9;
+        screenWidth_x = window.innerWidth * 0.8 * 0.9;
+        screenHeight_x = window.innerWidth * 0.2 * 0.9;
+        screenWidth_y = window.innerWidth * 0.2 * 0.9;
+        screenHeight_y = window.innerHeight * 0.5 * 0.9;
+        outerRadius = (screenWidth_main > screenHeight_main) ? (screenHeight_main / 2) : (screenWidth_main / 2);
         innerRadius = outerRadius / 4;
         
-        ballRadius = innerRadius * 0.9;
-        ball1Radius = innerRadius * 0.9;
-        ball2Radius = innerRadius * 0.9;
+        ball_mainRadius = innerRadius * 0.9;
+        ball_xRadius = innerRadius * 0.9;
+        ball_yRadius = innerRadius * 0.9;
 
-        centerX = screenWidth / 0.9  / 2;
-        centerY = (screenHeight / 0.9 / 2);
-        centerX1 = screenWidth1 / 0.9 / 2;
-        centerX2 = screenWidth2 / 0.9 / 2;
-        centerY1 = screenHeight1 / 0.9 /2 ;
-        centerY2 = screenHeight2 / 0.9 / 2;
+        centerX_main = screenWidth_main / 0.9  / 2;
+        centerY_main = (screenHeight_main / 0.9 / 2);
+        centerX_x = screenWidth_x / 0.9 / 2;
+        centerX_y = screenWidth_y / 0.9 / 2;
+        centerY_x = screenHeight_x / 0.9 /2 ;
+        centerY_y = screenHeight_y / 0.9 / 2;
         
-        if (screenWidth <= 0 || screenHeight <= 0) {
+        if (screenWidth_main <= 0 || screenHeight_main <= 0) {
             return false;
         }
         return true;
@@ -207,16 +205,16 @@ $(document).ready(function(){
     }
     // 위의 화면 크기에 따른 각각 요소들의 크기와 위치 설정
     function setDefaultViews() {
-        var ball = document.querySelector("#ball"),
-            ballimg = document.querySelector("#ball img"),
-            ball1 = document.querySelector("#ball1"),
-            ball1img = document.querySelector("#ball1 img"),
-            ball2 = document.querySelector("#ball2"),
-            ball2img = document.querySelector("#ball2 img"),
+        var ball_main = document.querySelector("#ball_main"),
+            ball_mainimg = document.querySelector("#ball_main img"),
+            ball_x = document.querySelector("#ball_x"),
+            ball_ximg = document.querySelector("#ball_x img"),
+            ball_y = document.querySelector("#ball_y"),
+            ball_yimg = document.querySelector("#ball_y img"),
 
-            glowimg = document.querySelector("#glow img"),
-            glow1img = document.querySelector("#glow1 img"),
-            glow2img = document.querySelector("#glow2 img"),
+            glow_mainimg = document.querySelector("#glow_main img"),
+            glow_ximg = document.querySelector("#glow_x img"),
+            glow_yimg = document.querySelector("#glow_y img"),
             
 
             outerCircle = document.querySelector("#outer-circle"),
@@ -226,10 +224,10 @@ $(document).ready(function(){
             barleft = document.querySelector("#barleft"),
             barleftimg = document.querySelector("#barleft img"),
 
-            circle1 = document.querySelector("#circle1"),
-            circle1img = document.querySelector("#circle1 img"),
-            circle2 = document.querySelector("#circle2"),
-            circle2img = document.querySelector("#circle2 img"),
+            circle_x = document.querySelector("#circle_x"),
+            circle_ximg = document.querySelector("#circle_x img"),
+            circle_y = document.querySelector("#circle_y"),
+            circle_yimg = document.querySelector("#circle_y img"),
             errorMessage = document.querySelector("#error-message");
 
         outerCircle.style.width = (outerRadius * 2) + "px";
@@ -250,68 +248,67 @@ $(document).ready(function(){
         barleftimg.style.width = innerRadius * 2 + "px";
         barleftimg.style.height = outerRadius * 2 + "px";
         
-        circle1.style.width = innerRadius * 1.95 + "px";
-        circle1.style.height = innerRadius * 1.95 + "px";
+        circle_x.style.width = innerRadius * 1.95 + "px";
+        circle_x.style.height = innerRadius * 1.95 + "px";
 
-        circle1img.style.width = innerRadius * 1.95 + "px";
-        circle1img.style.height = innerRadius * 1.95 + "px";
+        circle_ximg.style.width = innerRadius * 1.95 + "px";
+        circle_ximg.style.height = innerRadius * 1.95 + "px";
 
-        circle2.style.width = innerRadius * 1.95 + "px";
-        circle2.style.height = innerRadius * 1.95 + "px";
+        circle_y.style.width = innerRadius * 1.95 + "px";
+        circle_y.style.height = innerRadius * 1.95 + "px";
 
-        circle2img.style.width = innerRadius * 1.95 + "px";
-        circle2img.style.height = innerRadius * 1.95 + "px";
+        circle_yimg.style.width = innerRadius * 1.95 + "px";
+        circle_yimg.style.height = innerRadius * 1.95 + "px";
 
-        ball.style.left = centerX - innerRadius * 0.8 + "px";
-        ball.style.top = centerY - innerRadius * 0.8 + "px";
-        ball.style.width = innerRadius * 0.8 * 2 +"px";
-        ball.style.height = innerRadius * 0.8 * 2 + "px";
+        ball_main.style.left = centerX_main - innerRadius * 0.8 + "px";
+        ball_main.style.top = centerY_main - innerRadius * 0.8 + "px";
+        ball_main.style.width = innerRadius * 0.8 * 2 +"px";
+        ball_main.style.height = innerRadius * 0.8 * 2 + "px";
 
-        ballimg.style.width = innerRadius * 0.8 * 2 +"px";
-        ballimg.style.height = innerRadius * 0.8 * 2 + "px";
+        ball_mainimg.style.width = innerRadius * 0.8 * 2 +"px";
+        ball_mainimg.style.height = innerRadius * 0.8 * 2 + "px";
 
-        ball1.style.left = centerX1 + innerRadius * 0.8 + "px";
-        ball1.style.top = centerY1 - innerRadius * 0.8 + "px";
-        ball1.style.width = innerRadius * 0.8 * 2 +"px";
-        ball1.style.height = innerRadius * 0.8 * 2 + "px";
+        ball_x.style.left = centerX_x + innerRadius * 0.8 + "px";
+        ball_x.style.top = centerY_x - innerRadius * 0.8 + "px";
+        ball_x.style.width = innerRadius * 0.8 * 2 +"px";
+        ball_x.style.height = innerRadius * 0.8 * 2 + "px";
 
-        ball1img.style.width = innerRadius*0.8*2 +"px";
-        ball1img.style.height = innerRadius*0.8*2+ "px";
+        ball_ximg.style.width = innerRadius*0.8*2 +"px";
+        ball_ximg.style.height = innerRadius*0.8*2+ "px";
         
-        ball2.style.left = centerX2 - innerRadius * 0.8 + "px";
-        ball2.style.top = centerY2 - innerRadius * 0.8 + "px";
-        ball2.style.width = innerRadius * 0.8 * 2 +"px";
-        ball2.style.height = innerRadius * 0.8 * 2 + "px";
+        ball_y.style.left = centerX_y - innerRadius * 0.8 + "px";
+        ball_y.style.top = centerY_y - innerRadius * 0.8 + "px";
+        ball_y.style.width = innerRadius * 0.8 * 2 +"px";
+        ball_y.style.height = innerRadius * 0.8 * 2 + "px";
         
-        ball2img.style.width = innerRadius * 0.8 * 2 +"px";
-        ball2img.style.height = innerRadius * 0.8 * 2 + "px";
+        ball_yimg.style.width = innerRadius * 0.8 * 2 +"px";
+        ball_yimg.style.height = innerRadius * 0.8 * 2 + "px";
 
-        glow.style.width = innerRadius * 0.8 * 2 +"px";
-        glow.style.height = innerRadius * 0.8 * 2 + "px";
+        glow_main.style.width = innerRadius * 0.8 * 2 +"px";
+        glow_main.style.height = innerRadius * 0.8 * 2 + "px";
 
-        glowimg.style.width = innerRadius * 0.8 * 2 +"px";
-        glowimg.style.height = innerRadius * 0.8 * 2 + "px";
+        glow_mainimg.style.width = innerRadius * 0.8 * 2 +"px";
+        glow_mainimg.style.height = innerRadius * 0.8 * 2 + "px";
 
-        glow1.style.width = innerRadius * 0.8 * 2 +"px";
-        glow1.style.height = innerRadius * 0.8 * 2 + "px";
+        glow_x.style.width = innerRadius * 0.8 * 2 +"px";
+        glow_x.style.height = innerRadius * 0.8 * 2 + "px";
 
-        glow1img.style.width = innerRadius*0.8*2 +"px";
-        glow1img.style.height = innerRadius*0.8*2+ "px";
+        glow_ximg.style.width = innerRadius*0.8*2 +"px";
+        glow_ximg.style.height = innerRadius*0.8*2+ "px";
         
-        glow2.style.width = innerRadius * 0.8 * 2 +"px";
-        glow2.style.height = innerRadius * 0.8 * 2 + "px";
+        glow_y.style.width = innerRadius * 0.8 * 2 +"px";
+        glow_y.style.height = innerRadius * 0.8 * 2 + "px";
         
-        glow2img.style.width = innerRadius * 0.8 * 2 +"px";
-        glow2img.style.height = innerRadius * 0.8 * 2 + "px";
+        glow_yimg.style.width = innerRadius * 0.8 * 2 +"px";
+        glow_yimg.style.height = innerRadius * 0.8 * 2 + "px";
 
-        ball.style.display = "block";
-        ball1.style.display = "block";
-        ball2.style.display = "block";
+        ball_main.style.display = "block";
+        ball_x.style.display = "block";
+        ball_y.style.display = "block";
         
         outerCircle.style.display = "inline-block";
         bartop.style.display = "inline-block";
         barleft.style.display = "inline-block";
-        circle2.style.display = "inline-block";
         errorMessage.style.display = "none";
     }
  
