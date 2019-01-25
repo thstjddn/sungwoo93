@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 
 // 기본 변수 설정
-(function() {
+
     var MAX_G = 10, /** 중력 */
         outerRadius, /** 큰 원의 반지름 */
         screenWidth_main, /** 원이 포함된 화면의 너비*/
@@ -359,4 +359,3 @@ $(document).ready(function(){
     }
 
     window.onload = init;
-}());

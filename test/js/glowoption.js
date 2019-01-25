@@ -3,7 +3,7 @@
      statusGlow_y = false;
 
 
- function inCircleRange_main(x, y, r) {
+    function inCircleRange_main(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
     function inCircleRange_x(x, r) {
