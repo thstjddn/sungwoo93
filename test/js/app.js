@@ -1,4 +1,4 @@
-import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDefaultEvents, setError } from './setdefault'
+import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDefaultEvents, setError } from './setdefault.js'
 
 // 기본 변수 설정
 (function() {
