@@ -90,7 +90,7 @@ import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDef
     }
 
     //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
-    function onOrientationChange(dataEvent) {
+    export function onOrientationChange(dataEvent) {
         var noGravitation,
             xDiff,
             yDiff,
