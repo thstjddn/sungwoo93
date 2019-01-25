@@ -1,4 +1,3 @@
-// 일정 범위 안에(가운데 작은 원)에 공이 들어오면 빛나게 해주는 기능에서 일정 범위를 화면 크기에 맞게 설정하는 함수
 var statusGlow_main = false,
     statusGlow_x = false,
     statusGlow_y = false;
@@ -14,8 +13,6 @@ function inCircleRange_y(y, r) {
     return ( y * y <= r * r) ? true : false;
 }
 
-
-// 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
 function setGlow(status) {
     var glow_main = document.querySelector("#glow_main");
 

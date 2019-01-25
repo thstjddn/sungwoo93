@@ -1,7 +1,13 @@
-import {statusGlow_main,statusGlow_x,statusGlow_y,inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy} from './glowmotion.js'
-import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables, setDefaultViews} from './setdefault.js'
+import {statusGlow_main,statusGlow_x,statusGlow_y,
+        inCircleRange_main,inCircleRange_x,inCircleRange_y,
+        setGlow,setGlowx,setGlowy
+        } from './glowoption.js'
+import {outerRadius, innerRadius, 
+        centerX_main,centerY_main, 
+        setDefaultVariables, setDefaultViews
+        } from './setdefault.js'
     
-    var MAX_G = 10, /** 중력 */
+    var MAX_G = 10, // gravity
         mobileos; 
 
     window.onload = init;
@@ -14,7 +20,7 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
         }
         mobileos = getMobileOperatingSystem();
     }
-        // iOS와 android의 센서 동작 인식이 다르기 때문에 모바일 운영체제를 선택하는 함수
+
     function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     
@@ -42,19 +48,18 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
         return true;
     }
     
-
+    // if device doesn't have api or can't operate it, replace the error message.
     function emptyElement(elm) {
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
         }
- 
         return elm;
     }
-     // 오류가 있다면 에러메세지 출력하는 함수
-    function setError(text) {
+    function setError(err) {
         var errorMessage = emptyElement(document.querySelector("#error-message"));
-        errorMessage.appendChild(document.createTextNode(text));
+        errorMessage.appendChild(document.createTextNode(err));
     }
+    //
 
     function keyEventHandler(event) {
         if (event.keyName === "back") {
@@ -66,9 +71,7 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
         }
     }
     
- 
-    
-    //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
+    //make a ball move
     function onOrientationChange(dataEvent) {
         var noGravitation,
             xDiff,
@@ -94,7 +97,7 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
         xPos = (outerRadius - innerRadius * 0.8) * xDiff / MAX_G;
         yPos = (outerRadius - innerRadius * 0.8) * yDiff / MAX_G;
         
-        // ios는 android와 움직임 인식하는 방식이 달라서 기존 어플들과의 통일성을 위해 기기가 ios라면 움직임을 변경해줌
+        // difference between ios and android that calculate a movement of smartphone sensor , so write out the code below.
         if (mobileos === "iOS"){
             ball_main.style.left = centerX_main - innerRadius * 0.8 - xPos + "px";
             ball_main.style.top = centerY_main - innerRadius * 0.8 - yPos + "px";
