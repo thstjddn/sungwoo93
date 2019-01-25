@@ -37,6 +37,15 @@
     // 기본값 설정(각 기기마다 상이한 화면의 크기 설정)
 
     function setDefaultVariables() {
+        var screenWidth_main, /** 원이 포함된 화면의 너비*/
+            screenWidth_x, /** 상단 화면의 너비*/
+            screenWidth_y, /** 좌측 화면의 너비*/
+            screenHeight_main, /** 원이 포함된 화면의 높이 */
+            screenHeight_x, /** 상단 화면의 높이 */
+            screenHeight_y, /** 좌측 화면의 높이 */
+            outerRadius,
+            innerRadius;
+
         screenWidth_main = window.innerWidth * 0.8 * 0.9;
         screenHeight_main = window.innerHeight * 0.5 * 0.9;
         screenWidth_x = window.innerWidth * 0.8 * 0.9;
