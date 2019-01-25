@@ -1,3 +1,8 @@
+ var statusGlow_main = false,
+     statusGlow_x = false,
+     statusGlow_y = false;
+
+
  function inCircleRange_main(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
@@ -64,4 +69,4 @@
         statusGlow_y = status;
     }
 
-    export {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx, setGlowy};
+    export {statusGlow_main, statusGlow_x, statusGlow_y,inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx, setGlowy};
