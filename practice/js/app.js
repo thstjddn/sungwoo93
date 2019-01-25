@@ -75,8 +75,8 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
             yDiff,
             xPos,
             yPos,
-            ball_main = document.querySelector("#ball_main");
-            ball_x = document.querySelector("#ball_x");
+            ball_main = document.querySelector("#ball_main"),
+            ball_x = document.querySelector("#ball_x"),
             ball_y = document.querySelector("#ball_y");
  
         noGravitation = dataEvent.acceleration;
