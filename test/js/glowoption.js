@@ -1,15 +1,23 @@
-
-    function inCircleRange_main(x, y, r) {
+ function inCircleRange_main(x, y, r) {
         return (x * x + y * y <= r * r) ? true : false;
     }
     function inCircleRange_x(x, r) {
         return(x * x <= r * r) ? true : false;
     }
+
     function inCircleRange_y(y, r) {
         return ( y * y <= r * r) ? true : false;
     }
     
-     
+ 
+    function emptyElement(elm) {
+        while (elm.firstChild) {
+            elm.removeChild(elm.firstChild);
+        }
+ 
+        return elm;
+    }
+    
     // 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
     function setGlow(status) {
         var glow_main = document.querySelector("#glow_main");
@@ -25,12 +33,14 @@
         }
         statusGlow_main = status;
     }
+    
     function setGlowx(status) {
         var glow_x = document.querySelector("#glow_x");
  
         if (statusGlow_x === status) {
             return;
         }
+ 
         if (status === true) {
             glow_x.style.display = "block";
         } else {
@@ -38,12 +48,14 @@
         }
         statusGlow_x = status;
     }
+
     function setGlowy(status) {
         var glow_y = document.querySelector("#glow_y");
  
         if (statusGlow_y === status) {
             return;
         }
+ 
         if (status === true) {
             glow_y.style.display = "block";
         } else {
@@ -52,4 +64,4 @@
         statusGlow_y = status;
     }
 
-    export {inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy};
+    export {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx, setGlowy};
