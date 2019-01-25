@@ -1,4 +1,3 @@
-    import onOrientationChange from './app.js'
         // iOS와 android의 센서 동작 인식이 다르기 때문에 모바일 운영체제를 선택하는 함수
     function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -178,24 +177,12 @@
         barleft.style.display = "inline-block";
         errorMessage.style.display = "none";
     }
- 
-    function setDefaultEvents() {
-        document.addEventListener("tizenhwkey", keyEventHandler);
- 
-        if (window.DeviceMotionEvent) {
-            window.addEventListener("devicemotion", onOrientationChange);
-        } else {
-            return false;
-        }
- 
-        return true;
-    }
     
     // 오류가 있다면 에러메세지 출력하는 함수
-    function setError(text) {
+    function setError(err) {
         var errorMessage = emptyElement(document.querySelector("#error-message"));
  
-        errorMessage.appendChild(document.createTextNode(text));
+        errorMessage.appendChild(document.createTextNode(err));
     }
 
-    export { getMobileOperatingSystem , emptyElement, keyEventHandler, setDefaultVariables, setDefaultViews, setDefaultEvents, setError };
+    export { getMobileOperatingSystem , keyEventHandler, setDefaultVariables, setDefaultViews, setError };

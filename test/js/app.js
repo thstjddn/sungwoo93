@@ -1,5 +1,5 @@
-import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDefaultEvents, setError } from './setdefault.js'
-
+import { getMobileOperatingSystem , keyEventHandler, setDefaultVariables, setDefaultViews, setError } from './setdefault.js'
+import {inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy} from './glowoption.js'
 // 기본 변수 설정
 (function() {
     var MAX_G = 10, /** 중력 */
@@ -22,7 +22,6 @@ import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDef
         statusGlow_x = false,
         statusGlow_y = false;
     // 일정 범위 안에(가운데 작은 원)에 공이 들어오면 빛나게 해주는 기능에서 일정 범위를 화면 크기에 맞게 설정하는 함수
-    
 
     window.onload = init; 
 
@@ -36,61 +35,20 @@ import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDef
         mobileos = getMobileOperatingSystem();
     }
 
-    function inCircleRange_main(x, y, r) {
-        return (x * x + y * y <= r * r) ? true : false;
-    }
-    function inCircleRange_x(x, r) {
-        return(x * x <= r * r) ? true : false;
-    }
-    function inCircleRange_y(y, r) {
-        return ( y * y <= r * r) ? true : false;
-    }
-    
-     
-    // 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
-    function setGlow(status) {
-        var glow_main = document.querySelector("#glow_main");
+    function setDefaultEvents() {
+        document.addEventListener("tizenhwkey", keyEventHandler);
  
-        if (statusGlow_main === status) {
-            return;
-        }
- 
-        if (status === true) {
-            glow_main.style.display = "block";
+        if (window.DeviceMotionEvent) {
+            window.addEventListener("devicemotion", onOrientationChange);
         } else {
-            glow_main.style.display = "none";
+            return false;
         }
-        statusGlow_main = status;
-    }
-    function setGlowx(status) {
-        var glow_x = document.querySelector("#glow_x");
  
-        if (statusGlow_x === status) {
-            return;
-        }
-        if (status === true) {
-            glow_x.style.display = "block";
-        } else {
-            glow_x.style.display = "none";
-        }
-        statusGlow_x = status;
-    }
-    function setGlowy(status) {
-        var glow_y = document.querySelector("#glow_y");
- 
-        if (statusGlow_y === status) {
-            return;
-        }
-        if (status === true) {
-            glow_y.style.display = "block";
-        } else {
-            glow_y.style.display = "none";
-        }
-        statusGlow_y = status;
+        return true;
     }
 
     //devicemotion을 이용해 위치별로 공을 움직이게 해주는 함수
-    export function onOrientationChange(dataEvent) {
+    function onOrientationChange(dataEvent) {
         var noGravitation,
             xDiff,
             yDiff,
@@ -99,7 +57,7 @@ import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDef
             ball_main = document.querySelector("#ball_main");
             ball_x = document.querySelector("#ball_x");
             ball_y = document.querySelector("#ball_y");
- 
+    
         noGravitation = dataEvent.acceleration;
         dataEvent = dataEvent.accelerationIncludingGravity;
         
@@ -130,7 +88,7 @@ import { getMobileOperatingSystem , setDefaultVariables, setDefaultViews, setDef
 
         if (inCircleRange_main(xPos, yPos, innerRadius - innerRadius * 0.8)) {
             if (statusGlow_main === false) {
-                setGlow(true);
+                setGlow(true);               
             }
         } else {
             if (statusGlow_main === true) {
