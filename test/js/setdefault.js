@@ -52,7 +52,6 @@
         screenWidth_y = window.innerWidth * 0.2 * 0.9;
         screenHeight_y = window.innerHeight * 0.5 * 0.9;
         outerRadius = (screenWidth_main > screenHeight_main) ? (screenHeight_main / 2) : (screenWidth_main / 2);
-        innerRadius = outerRadius / 4;
         
         // jQuery로 모바일로 출력되는 화면에 맞춰서 전체 화면의 비율을 정함
     $(document).ready(function(){
