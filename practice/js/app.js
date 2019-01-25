@@ -1,4 +1,4 @@
-import {statusGlow_main,statusGlow_x,setGlowy,inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy} from './glowmotion.js'
+import {statusGlow_main,statusGlow_x,statusGlow_y,inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy} from './glowmotion.js'
 import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables, setDefaultViews} from './setdefault.js'
     
     var MAX_G = 10, /** 중력 */
