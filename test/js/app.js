@@ -80,10 +80,6 @@ import {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx,
             $('#main-detail').css('grid-template-rows', grid_height)
         });
 
-        ball_mainRadius = innerRadius * 0.9;
-        ball_xRadius = innerRadius * 0.9;
-        ball_yRadius = innerRadius * 0.9;
-
         centerX_main = screenWidth_main / 0.9  / 2;
         centerY_main = (screenHeight_main / 0.9 / 2);
         centerX_x = screenWidth_x / 0.9 / 2;
