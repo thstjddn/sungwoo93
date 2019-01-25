@@ -4,12 +4,6 @@ import {inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setG
 (function() {
     var MAX_G = 10, /** 중력 */
         outerRadius, /** 큰 원의 반지름 */
-        screenWidth_main, /** 원이 포함된 화면의 너비*/
-        screenWidth_x, /** 상단 화면의 너비*/
-        screenWidth_y, /** 좌측 화면의 너비*/
-        screenHeight_main, /** 원이 포함된 화면의 높이 */
-        screenHeight_x, /** 상단 화면의 높이 */
-        screenHeight_y, /** 좌측 화면의 높이 */
         centerX_main, /** 우측 하단의 가로 중앙 */
         centerY_main, /** 우측 하단의 세로 중앙 */
         centerX_x, /** 상단의 가로 중앙 */
