@@ -14,15 +14,6 @@
         return ( y * y <= r * r) ? true : false;
     }
     
- 
-    function emptyElement(elm) {
-        while (elm.firstChild) {
-            elm.removeChild(elm.firstChild);
-        }
- 
-        return elm;
-    }
-    
     // 위의 incirclerange를 이용해 범위 안에 들어왔다면 공에 빛효과(glow) 를 주는 함수
     function setGlow(status) {
         var glow_main = document.querySelector("#glow_main");

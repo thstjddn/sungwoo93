@@ -277,11 +277,16 @@ import {statusGlow_main, statusGlow_x, statusGlow_y, inCircleRange_main, inCircl
             }
         }
     }
-    
+    function emptyElement(elm) {
+        while (elm.firstChild) {
+            elm.removeChild(elm.firstChild);
+        }
+ 
+        return elm;
+    }
     function setError(text) {
         var errorMessage = emptyElement(document.querySelector("#error-message"));
  
         errorMessage.appendChild(document.createTextNode(text));
     }
- 
 }());
