@@ -1,5 +1,5 @@
 
-import {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx, setGlowy} from 'glowoption.js'
+import {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx, setGlowy} from './glowoption.js'
 // 기본 변수 설정
 (function() {
     var MAX_G = 10, /** 중력 */
