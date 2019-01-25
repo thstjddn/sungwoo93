@@ -207,8 +207,8 @@ import {inCircleRange_main, inCircleRange_x, inCircleRange_y, setGlow, setGlowx,
             yDiff,
             xPos,
             yPos,
-            ball_main = document.querySelector("#ball_main");
-            ball_x = document.querySelector("#ball_x");
+            ball_main = document.querySelector("#ball_main"),
+            ball_x = document.querySelector("#ball_x"),
             ball_y = document.querySelector("#ball_y");
  
         noGravitation = dataEvent.acceleration;
