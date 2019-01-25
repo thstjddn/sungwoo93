@@ -6,10 +6,6 @@ import {inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setG
         outerRadius, /** 큰 원의 반지름 */
         centerX_main, /** 우측 하단의 가로 중앙 */
         centerY_main, /** 우측 하단의 세로 중앙 */
-        centerX_x, /** 상단의 가로 중앙 */
-        centerY_x, /** 상단의 세로 중앙*/
-        centerX_y, // 좌측의 가로 중앙
-        centerY_y, // 좌측의 세로 중앙
         mobileos, // 모바일 os가 무엇인지를 받아오는 변수
         innerRadius, //이동하는 원의 반지름
         statusGlow_main = false,

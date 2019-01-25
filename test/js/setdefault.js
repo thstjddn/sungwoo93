@@ -45,6 +45,12 @@
             screenHeight_y, /** 좌측 화면의 높이 */
             outerRadius,
             innerRadius;
+            centerX_main, /** 우측 하단의 가로 중앙 */
+            centerY_main, /** 우측 하단의 세로 중앙 */
+            centerX_x, /** 상단의 가로 중앙 */
+            centerY_x, /** 상단의 세로 중앙*/
+            centerX_y, // 좌측의 가로 중앙
+            centerY_y, // 좌측의 세로 중앙
 
         screenWidth_main = window.innerWidth * 0.8 * 0.9;
         screenHeight_main = window.innerHeight * 0.5 * 0.9;
@@ -61,10 +67,6 @@
             grid_height = height_top + "px" + ' ' + '50%' + ' ' + 'auto';
         $('#main-detail').css('grid-template-rows', grid_height)
     });
-
-        ball_mainRadius = innerRadius * 0.9;
-        ball_xRadius = innerRadius * 0.9;
-        ball_yRadius = innerRadius * 0.9;
 
         centerX_main = screenWidth_main / 0.9  / 2;
         centerY_main = (screenHeight_main / 0.9 / 2);
