@@ -1,11 +1,5 @@
-import {statusGlow_main,statusGlow_x,statusGlow_y,
-        inCircleRange_main,inCircleRange_x,inCircleRange_y,
-        setGlow,setGlowx,setGlowy
-        } from './glowoption.js'
-import {outerRadius, innerRadius, 
-        centerX_main,centerY_main, 
-        setDefaultVariables, setDefaultViews
-        } from './setdefault.js'
+import {inCircleRange,setGlow} from './glowoption.js'
+import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables, setDefaultViews} from './setdefault.js'
     
     var MAX_G = 10, // gravity
         mobileos; 
@@ -109,34 +103,6 @@ import {outerRadius, innerRadius,
             ball_x.style.left = centerX_main - innerRadius * 0.8 + xPos + "px";
             ball_y.style.top = centerY_main - innerRadius * 0.8 + yPos + "px";
         }
-
-        if (inCircleRange_main(xPos, yPos, innerRadius - innerRadius * 0.8)) {
-            if (statusGlow_main === false) {
-                setGlow(true);
-            }
-        } else {
-            if (statusGlow_main === true) {
-                setGlow(false);
-            }
-        }
-
-        if (inCircleRange_x(xPos,  innerRadius - innerRadius * 0.8)) {
-            if (statusGlow_x === false) {
-                setGlowx(true);
-            }
-        } else {
-            if (statusGlow_x === true) {
-                setGlowx(false);
-            }
-        }
-
-        if (inCircleRange_y(yPos, innerRadius - innerRadius * 0.8)) {
-            if (statusGlow_y === false) {
-                setGlowy(true);
-            }
-        } else {
-            if (statusGlow_y === true) {
-                setGlowy(false);
-            }
-        }
+        inCircleRange(xPos, yPos, (innerRadius - innerRadius * 0.8));
+        setGlow();
     }

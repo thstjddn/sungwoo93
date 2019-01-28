@@ -2,60 +2,36 @@ var statusGlow_main = false,
     statusGlow_x = false,
     statusGlow_y = false;
 
-function inCircleRange_main(x, y, r) {
-    return (x * x + y * y <= r * r) ? true : false;
-}
-function inCircleRange_x(x, r) {
-    return(x * x <= r * r) ? true : false;
-}
-
-function inCircleRange_y(y, r) {
-    return ( y * y <= r * r) ? true : false;
+function inCircleRange(x, y, r) {
+    var statuslist = [];
+    statuslist.push((x * x <= r * r) ? true : false);
+    statuslist.push((y * y <= r * r) ? true : false);
+    statuslist.push(((statuslist[0] && statuslist[1]) === true) ? true : false);
+    return statuslist;
 }
 
-function setGlow(status) {
-    var glow_main = document.querySelector("#glow_main");
+function setGlow() {
+    var glow_main = document.querySelector("#glow_main"),
+        glow_x = document.querySelector("#glow_x"),
+        glow_y = document.querySelector("#glow_y");
 
-    if (statusGlow_main === status) {
-        return;
-    }
-
-    if (status === true) {
-        glow_main.style.display = "block";
-    } else {
-        glow_main.style.display = "none";
-    }
-    statusGlow_main = status;
-}
-
-function setGlowx(status) {
-    var glow_x = document.querySelector("#glow_x");
-
-    if (statusGlow_x === status) {
-        return;
-    }
-
-    if (status === true) {
+    if (statuslist[0]===true){
         glow_x.style.display = "block";
     } else {
         glow_x.style.display = "none";
     }
-    statusGlow_x = status;
-}
 
-function setGlowy(status) {
-    var glow_y = document.querySelector("#glow_y");
-
-    if (statusGlow_y === status) {
-        return;
-    }
-
-    if (status === true) {
+    if (statuslist[1] === true){
         glow_y.style.display = "block";
     } else {
         glow_y.style.display = "none";
     }
-    statusGlow_y = status;
+
+    if (statuslist[2] === true) {
+        glow_main.style.display = "block";
+    } else {
+        glow_main.style.display = "none";
+    }
 }
 
-export {statusGlow_main,statusGlow_x,statusGlow_y,inCircleRange_main,inCircleRange_x,inCircleRange_y,setGlow,setGlowx,setGlowy};
+export {inCircleRange,setGlow};
