@@ -1,4 +1,4 @@
-import {inCircleRange,setGlow} from './glowoption.js'
+import {statuslist, inCircleRange,setGlow} from './glowoption.js'
 import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables, setDefaultViews} from './setdefault.js'
     
     var MAX_G = 10, // gravity
@@ -104,6 +104,6 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
             ball_y.style.top = centerY_main - innerRadius * 0.8 + yPos + "px";
         }
         if (inCircleRange(xPos,yPos, (innerRadius - innerRadius * 0.8))){
-            return setGlow();
+            return setGlow(statuslist[0], statuslist[1], statuslist[2]);
         }
     }
