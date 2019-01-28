@@ -46,4 +46,4 @@ function setGlow(x, y, z) {
     statusGlow_main === statuslist[2];
 }
 
-export {statuslist, inCircleRange, setGlow};
+export {statusGlow_main,statusGlow_x,statusGlow_y,statuslist, inCircleRange, setGlow};
