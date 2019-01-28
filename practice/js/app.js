@@ -103,6 +103,7 @@ import {outerRadius, innerRadius, centerX_main,centerY_main, setDefaultVariables
             ball_x.style.left = centerX_main - innerRadius * 0.8 + xPos + "px";
             ball_y.style.top = centerY_main - innerRadius * 0.8 + yPos + "px";
         }
-        inCircleRange(xPos, yPos, (innerRadius - innerRadius * 0.8));
-        setGlow();
+        if (inCircleRange(xPos,yPos, (innerRadius - innerRadius * 0.8))){
+            return setGlow();
+        }
     }
