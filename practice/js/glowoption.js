@@ -1,10 +1,9 @@
 var statusGlow_main = false,
     statusGlow_x = false,
-    statusGlow_y = false;
+    statusGlow_y = false,
     statuslist = [];
 
 function inCircleRange(x, y, r) {
-    var statuslist =[];
     statuslist.push((x * x <= r * r) ? true : false);
     statuslist.push((y * y <= r * r) ? true : false);
     statuslist.push(((statuslist[0] && statuslist[1]) === true) ? true : false);
