@@ -1,6 +1,7 @@
-var video = document.querySelector("#videoElement");
 
 window.onload = function () {
+    var video = document.querySelector("#videoElement");
+
     if (navigator.mediaDevices.getUserMedia) {       
         navigator.mediaDevices.getUserMedia({video: true})
     .then(function(stream) {
