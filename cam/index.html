@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta content="stuff, to, help, search, engines, not" name="keywords">
-<meta content="What this page is about." name="description">
-<meta content="Display Webcam Stream" name="title">
-<title>Display Webcam Stream</title>
-  
-<style>
-#container {
-    margin: 0px auto;
-    width: 500px;
-    height: 375px;
-    border: 10px #333 solid;
-}
-#videoElement {
-    width: 500px;
-    height: 375px;
-    background-color: #666;
-}
-</style>
-</head>
-  
-<body>
-<div id="container">
-    <video autoplay="true" id="videoElement">
-     
-    </video>
-</div>
-<script src = "app1.js"></script>
-</body>
+    <head>
+        <title>My first webrtc example</title>
+        <script src="app.js"></script>
+        <script type="text/javascript">
+            function gotStream(stream) {
+                window.AudioContext = window.AudioContext || window.webkitAudioContext;
+                var audioContext = new AudioContext();
+
+                // Create an AudioNode from the stream
+                var mediaStreamSource = audioContext.createMediaStreamSource(stream);
+
+                // Connect it to destination to hear yourself
+                // or any other node for processing!
+                mediaStreamSource.connect(audioContext.destination);
+                var video = document.querySelector('video');
+                var videoTracks = stream.getVideoTracks();
+                window.stream = stream; // make variable available to browser console
+                video.srcObject = stream;
+            }
+            function onfail(error) {
+                console.log("permission not granted or system don't have media devices."+error.name);
+            }
+            navigator.getUserMedia({audio:true,video:true}, gotStream,onfail);
+            
+            
+        </script>
+    </head>
+    <body>
+        Welcome to webrtc
+        <video id="local" autoplay=""></video>
+    </body>
 </html>

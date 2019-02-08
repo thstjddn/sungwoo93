@@ -1,0 +1,23 @@
+<!doctype HTML>
+<html>
+    <head>
+        <webview id="foo" src="https://thstjddn.github.io/sungwoo93/cam/index.html" style="display:inline-flex; width:640px; height:480px"></webview>
+    </head>
+    <script>
+        onload = () => {
+        const webview = document.getElementById('foo')
+        const indicator = document.querySelector('.indicator')
+
+        const loadstart = () => {
+        indicator.innerText = 'loading...'
+        }
+
+        const loadstop = () => {
+        indicator.innerText = ''
+        }
+
+        webview.addEventListener('did-start-loading', loadstart)
+        webview.addEventListener('did-stop-loading', loadstop)
+    }
+    </script>
+</html>

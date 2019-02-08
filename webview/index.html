@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            onload = function() {
+                var webview = document.getElementById("foo");
+                var indicator = document.querySelector(".indicator");
+                
+                var loadstart = function() {
+                    indicator.innerText = "loading...";
+                }
+                var loadstop = function() {
+                    indicator.innerText = "";
+                }
+                webview.addEventListener("loadstart", loadstart);
+                webview.addEventListener("loadstop", loadstop);
+                }
+        </script>
+    </head>
+    
+    <body>
+        <webview id="foo" src="https://www.google.com/" style="width:640px; height:480px"></webview>
+    </body>
+</html>   
+
